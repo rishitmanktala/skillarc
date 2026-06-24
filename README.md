@@ -1,6 +1,6 @@
-# SkillArc — Achieving Real Change
+# SkillARC — Achieving Real Change
 
-SkillArc is a responsive, modern web application for the SkillArc NGO, built on **Next.js 14 (App Router)**, **Tailwind CSS v4**, and **Framer Motion**. It features a design system utilizing a soft pastel-colored palette, clean layout margins, uniform `rounded-full` CTA buttons, and interactive transitions.
+SkillARC is a responsive, modern web application for the SkillARC NGO, built on **Next.js 14 (App Router)**, **Tailwind CSS v4**, and **Framer Motion**. It features a design system utilizing a soft pastel-colored palette, clean layout margins, uniform `rounded-full` CTA buttons, and interactive transitions.
 
 ---
 
@@ -8,7 +8,7 @@ SkillArc is a responsive, modern web application for the SkillArc NGO, built on 
 
 * **Scroll Animations**: Page sections trigger smooth entrance fades (`fade-up`, `fade-left`, `fade-right`, `scale-in`) on scroll via a prefers-reduced-motion-compliant `<AnimatedSection>` wrapper.
 * **Page Transitions**: route-change animations using Framer Motion's `<AnimatePresence>` and pathname tracking.
-* **SVG Path-Drawn Loader**: A vector drawing animation of the SkillArc "S" logo, configured to display only on the first visit of a session using `sessionStorage`.
+* **SVG Path-Drawn Loader**: A vector drawing animation of the SkillARC "S" logo, configured to display only on the first visit of a session using `sessionStorage`.
 * **Scroll-to-Top Button**: A pastel-blue button appearing after scrolling `300px`, providing smooth scroll-to-top interaction.
 * **Production Configurations**: Includes robots.txt, dynamic XML sitemaps, manifest.json for PWA installs, and secure server headers.
 
@@ -93,7 +93,7 @@ All of the website's copy, statistics, milestones, FAQ entries, resource cards, 
 
 ## 🌐 Deployment to Vercel
 
-The SkillArc codebase is fully optimized for **Vercel** out-of-the-box:
+The SkillARC codebase is fully optimized for **Vercel** out-of-the-box:
 
 1. **Deploy using Vercel CLI**:
    Ensure you have the Vercel CLI installed globally or run it via npx:

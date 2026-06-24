@@ -31,16 +31,19 @@ export default function InvolveHero() {
           className="flex flex-col items-center"
         >
           {/* Eyebrow */}
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-4 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-4 select-none">
             Get Involved
           </span>
 
           {/* Headline */}
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal tracking-tight leading-[1.15] max-w-3xl mb-8">
-            <span className="relative inline-block">
-              <span className="relative z-10">Be the Change. Join SkillArc.</span>
+            Be the Change. Join{" "}
+            <span className="relative inline-block whitespace-nowrap">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-dark via-[#89c5d7] to-accent-dark">
+                SkillARC.
+              </span>
               <motion.svg
-                className="absolute left-0 -bottom-1 w-full h-[12px] -z-0"
+                className="absolute left-0 -bottom-1 w-full h-[10px] -z-0"
                 viewBox="0 0 100 10"
                 preserveAspectRatio="none"
               >
@@ -59,12 +62,12 @@ export default function InvolveHero() {
           </h1>
 
           {/* Tab Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 select-none">
+          <div className="grid grid-cols-2 gap-3 w-full max-w-[320px] sm:max-w-none sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 select-none">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => scrollToSection(tab.id)}
-                className="font-body font-semibold text-sm bg-white hover:bg-primary/20 text-charcoal border border-charcoal/5 px-6 py-3 rounded-full shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-300 focus:outline-none"
+                className="font-body font-semibold text-sm bg-white hover:bg-primary/20 text-charcoal border border-charcoal/5 px-4 py-2.5 sm:px-6 sm:py-3 rounded-full shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-300 focus:outline-none w-full sm:w-auto text-center"
               >
                 {tab.label}
               </button>

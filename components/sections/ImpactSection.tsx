@@ -38,12 +38,16 @@ function Counter({ value }: { value: string }) {
 
 export default function ImpactSection() {
   return (
-    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-primary/20">
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white border-b border-primary/5">
+      {/* Background blobs for design depth */}
+      <div className="absolute top-10 right-10 w-72 h-72 rounded-full bg-primary/10 blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-72 h-72 rounded-full bg-accent/10 blur-3xl -z-10 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Our Impact
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -61,7 +65,7 @@ export default function ImpactSection() {
               key={stat.label}
               variant="scale-in"
               delay={index * 0.08}
-              className="flex flex-col items-center justify-center p-6 md:p-8 bg-white rounded-2xl border border-[#2D2D2D]/5 border-t-4 border-t-accent shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_-6px_rgba(45,45,45,0.08)] group"
+              className={`flex flex-col items-center justify-center p-6 md:p-8 bg-white rounded-2xl border border-[#2D2D2D]/5 border-t-4 border-t-accent shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_-6px_rgba(45,45,45,0.08)] group ${index === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
             >
               <div className="mb-2">
                 <Counter value={stat.value} />

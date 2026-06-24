@@ -10,28 +10,28 @@ const RECOGNITIONS = [
     detail: "Active inclusion in the global forum representing youth voices, civic participation, and educational reform.",
     date: "Ongoing Presence",
     icon: Globe,
-    color: "from-primary/20 to-primary/5 border-primary/20 text-primary",
+    color: "from-primary/20 to-primary/5 border-primary/20 text-primary-dark",
   },
   {
     title: "Youth Ambassador, HundrED.org",
     detail: "Officially recognized on 27 June 2025 for helping scale and advocate for impactful K-12 pedagogical innovations globally.",
     date: "27 June 2025",
     icon: Award,
-    color: "from-accent/20 to-accent/5 border-accent/20 text-accent",
+    color: "from-accent/20 to-accent/5 border-accent/20 text-accent-dark",
   },
   {
     title: "Presented at IIM Ranchi",
     detail: "Showcased SkillARC's grassroots impact and operational sustainability at the Entrepreneurial Boot Camp.",
     date: "Dec 2025",
     icon: Presentation,
-    color: "from-highlight/25 to-highlight/5 border-highlight/30 text-highlight",
+    color: "from-highlight/25 to-highlight/5 border-highlight/30 text-highlight-dark",
   },
   {
     title: "Featured on The Yap Company Podcast",
     detail: "Founder Shreya Gupta shared SkillARC's journey in the special episode titled 'Grades, Goals and Good Times'.",
     date: "June 2026",
     icon: Mic,
-    color: "from-primary/20 to-primary/5 border-primary/20 text-primary",
+    color: "from-primary/20 to-primary/5 border-primary/20 text-primary-dark",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function RecognitionsSection() {
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Achievements
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">

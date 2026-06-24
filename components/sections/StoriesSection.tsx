@@ -7,7 +7,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 const STORIES = [
   {
-    quote: "Being part of SkillArc was super valuable for me. The sessions were really interactive and fun not like classroom learning. I got better at talking to people. Felt more confident sharing my ideas. I learned that being a leader working with a team and growing as a person are really important. The activities and discussions helped me get skills that're useful in school and in life. SkillArc helped me become more confident and a better person. I'm thankful, for everything I learned from SkillArc.",
+    quote: "Being part of SkillARC was super valuable for me. The sessions were really interactive and fun not like classroom learning. I got better at talking to people. Felt more confident sharing my ideas. I learned that being a leader working with a team and growing as a person are really important. The activities and discussions helped me get skills that're useful in school and in life. SkillARC helped me become more confident and a better person. I'm thankful, for everything I learned from SkillARC.",
     author: "Suhasini Gupta",
     role: "Suncity School, Sector-37D, Gurugram",
     initials: "SG",
@@ -15,7 +15,7 @@ const STORIES = [
   {
     quote: "My journey with SkillARC over the past 3 years has been one of the most meaningful experiences of my life. I joined as someone who wanted to contribute, but along the way, SkillARC helped me grow just as much as the students I worked with. Watching a small initiative begin with a handful of students and gradually reach 100+ young minds has been incredibly inspiring. Every session taught me the value of empathy, patience, teamwork, and the power of creating opportunities for others. Being a part of SkillARC has shown me that even small efforts can create a lasting impact. I am grateful to be a part of this mission and contribute towards building a more confident and empowered generation.",
     author: "Ruhaan Sharma",
-    role: "Suncity School 37D, Gurugram",
+    role: "Suncity School, Sector-37D, Gurugram",
     initials: "RS",
   },
 ];
@@ -91,7 +91,7 @@ export default function StoriesSection() {
                     {story.initials}
                   </div>
                   <div>
-                    <h4 className="font-body font-bold text-sm text-white">{story.author}</h4>
+                    <h3 className="font-body font-bold text-sm text-white">{story.author}</h3>
                     <p className="font-body text-xs text-gray-400">{story.role}</p>
                   </div>
                 </div>
@@ -126,9 +126,9 @@ export default function StoriesSection() {
                     {STORIES[activeIndex].initials}
                   </div>
                   <div>
-                    <h4 className="font-body font-bold text-sm text-white">
+                    <h3 className="font-body font-bold text-sm text-white">
                       {STORIES[activeIndex].author}
-                    </h4>
+                    </h3>
                     <p className="font-body text-xs text-gray-400">
                       {STORIES[activeIndex].role}
                     </p>

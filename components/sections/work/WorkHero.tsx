@@ -17,7 +17,7 @@ export default function WorkHero() {
           className="flex flex-col items-center"
         >
           {/* Eyebrow */}
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-4 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-4 select-none">
             Our Work
           </span>
 

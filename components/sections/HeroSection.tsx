@@ -45,7 +45,7 @@ export default function HeroSection() {
         >
           {/* Eyebrow Label */}
           <AnimatedSection variant="stagger-item" className="mb-6">
-            <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-accent/10 text-accent font-body text-xs md:text-sm font-semibold tracking-wider uppercase">
+            <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-accent/10 text-accent-dark font-body text-xs md:text-sm font-semibold tracking-wider uppercase">
               Empowering Youth Across India 🇮🇳
             </span>
           </AnimatedSection>
@@ -77,65 +77,59 @@ export default function HeroSection() {
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
               className="w-full sm:w-auto text-center font-body font-semibold text-sm bg-primary text-charcoal px-6 py-3 rounded-xl shadow-sm hover:bg-primary/80 transition-colors"
             >
-              Join Us
+              Get Involved
             </MotionLink>
             <MotionLink
-              href="/get-involved#donate"
-              whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 20px -3px rgba(242,181,196,0.4)" }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="w-full sm:w-auto text-center font-body font-semibold text-sm bg-accent text-charcoal px-6 py-3 rounded-xl shadow-sm hover:bg-accent/80 transition-colors"
-            >
-              Support the Cause
-            </MotionLink>
-            <MotionLink
-              href="/get-involved#volunteer"
+              href="/our-work"
               whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 20px -3px rgba(45,45,45,0.15)" }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
               className="w-full sm:w-auto text-center font-body font-semibold text-sm border-2 border-charcoal text-charcoal px-6 py-3 rounded-xl hover:bg-charcoal hover:text-background-custom transition-colors"
             >
-              Volunteer
+              Explore Programs
             </MotionLink>
           </AnimatedSection>
 
           {/* Mini Impact Stats */}
-          <AnimatedSection variant="stagger-item" className="flex flex-wrap items-center gap-6 border-t border-primary/20 pt-8 w-full">
-            <motion.div 
+          <AnimatedSection variant="stagger-item" className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-6 border-t border-primary/20 pt-8 w-full text-center sm:text-left">
+            <MotionLink 
+              href="/about"
               whileHover={{ y: -4, scale: 1.03 }}
-              className="flex items-center gap-2.5 cursor-pointer select-none"
+              className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 cursor-pointer select-none text-center sm:text-left"
             >
               <div className="p-2 bg-primary/10 rounded-lg">
-                <GraduationCap className="w-5 h-5 text-primary shrink-0" />
+                <GraduationCap className="w-5 h-5 text-primary-dark shrink-0" />
               </div>
-              <span className="font-body text-sm font-semibold text-charcoal">
+              <span className="font-body text-xs sm:text-sm font-semibold text-charcoal leading-tight">
                 500+ Students
               </span>
-            </motion.div>
+            </MotionLink>
             <div className="h-4 w-px bg-primary/25 hidden sm:block" />
-            <motion.div 
+            <MotionLink 
+              href="/our-work"
               whileHover={{ y: -4, scale: 1.03 }}
-              className="flex items-center gap-2.5 cursor-pointer select-none"
+              className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 cursor-pointer select-none text-center sm:text-left"
             >
               <div className="p-2 bg-accent/10 rounded-lg">
-                <BookOpen className="w-5 h-5 text-accent shrink-0" />
+                <BookOpen className="w-5 h-5 text-accent-dark shrink-0" />
               </div>
-              <span className="font-body text-sm font-semibold text-charcoal">
+              <span className="font-body text-xs sm:text-sm font-semibold text-charcoal leading-tight">
                 15+ Workshops
               </span>
-            </motion.div>
+            </MotionLink>
             <div className="h-4 w-px bg-primary/25 hidden sm:block" />
-            <motion.div 
+            <MotionLink 
+              href="/about#collaborations"
               whileHover={{ y: -4, scale: 1.03 }}
-              className="flex items-center gap-2.5 cursor-pointer select-none"
+              className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 cursor-pointer select-none text-center sm:text-left"
             >
               <div className="p-2 bg-highlight/10 rounded-lg">
-                <Users className="w-5 h-5 text-highlight shrink-0" />
+                <Users className="w-5 h-5 text-highlight-dark shrink-0" />
               </div>
-              <span className="font-body text-sm font-semibold text-charcoal">
+              <span className="font-body text-xs sm:text-sm font-semibold text-charcoal leading-tight">
                 10+ Communities
               </span>
-            </motion.div>
+            </MotionLink>
           </AnimatedSection>
         </AnimatedSection>
 
@@ -143,9 +137,9 @@ export default function HeroSection() {
         <AnimatedSection
           variant="scale-in"
           delay={0.25}
-          className="lg:col-span-5 w-full flex items-center justify-center relative min-h-[350px] lg:min-h-[500px]"
+          className="lg:col-span-5 w-full flex items-center justify-center relative min-h-[300px] lg:min-h-[500px] mt-8 lg:mt-0"
         >
-          <div className="relative w-full max-w-[450px] lg:max-w-[500px] aspect-square rounded-3xl overflow-hidden shadow-xl border border-primary/20 bg-background-custom flex items-center justify-center">
+          <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] aspect-square rounded-3xl overflow-hidden shadow-xl border border-primary/20 bg-background-custom flex items-center justify-center p-6 sm:p-8">
             {/* Ambient pulsing background glow */}
             <motion.div 
               className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 -z-10"
@@ -155,7 +149,7 @@ export default function HeroSection() {
             <img
               src="/images/hero-illustration.png"
               alt="Youth Empowerment Illustration — SkillARC"
-              className="w-full h-full object-cover select-none"
+              className="w-full h-full object-contain select-none"
             />
           </div>
         </AnimatedSection>

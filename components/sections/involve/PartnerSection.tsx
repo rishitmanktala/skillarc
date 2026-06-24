@@ -41,7 +41,7 @@ export default function PartnerSection() {
           
           {/* Left: Partnership Copy */}
           <div className="lg:col-span-6 flex flex-col items-start">
-            <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+            <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
               Institutional Collaborations
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight mb-6">
@@ -55,7 +55,7 @@ export default function PartnerSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
               {BENEFITS.map((benefit) => (
                 <div key={benefit} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-accent-dark shrink-0 mt-0.5" />
                   <span className="font-body text-sm text-charcoal/90 leading-relaxed">
                     {benefit}
                   </span>
@@ -80,8 +80,9 @@ export default function PartnerSection() {
                     >
                       {/* Organisation Name */}
                       <AnimatedSection variant="stagger-item">
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Organisation Name</label>
+                        <label htmlFor="orgName" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Organisation Name</label>
                         <input
+                          id="orgName"
                           type="text"
                           required
                           value={orgName}
@@ -93,8 +94,9 @@ export default function PartnerSection() {
 
                       {/* Contact Person */}
                       <AnimatedSection variant="stagger-item">
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Contact Person Name</label>
+                        <label htmlFor="contactName" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Contact Person Name</label>
                         <input
+                          id="contactName"
                           type="text"
                           required
                           value={contactName}
@@ -107,8 +109,9 @@ export default function PartnerSection() {
                       {/* Email & Phone */}
                       <AnimatedSection variant="stagger-item" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Email ID</label>
+                          <label htmlFor="emailId" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Email ID</label>
                           <input
+                            id="emailId"
                             type="email"
                             required
                             value={email}
@@ -118,8 +121,9 @@ export default function PartnerSection() {
                           />
                         </div>
                         <div>
-                          <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Phone Number</label>
+                          <label htmlFor="phoneNumber" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Phone Number</label>
                           <input
+                            id="phoneNumber"
                             type="tel"
                             required
                             value={phone}
@@ -132,8 +136,9 @@ export default function PartnerSection() {
 
                       {/* Organisation Type Dropdown */}
                       <AnimatedSection variant="stagger-item">
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Organisation Type</label>
+                        <label htmlFor="orgType" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Organisation Type</label>
                         <select
+                          id="orgType"
                           value={orgType}
                           onChange={(e) => setOrgType(e.target.value)}
                           className="w-full px-4 py-2.5 rounded-xl border border-charcoal/10 bg-white focus:outline-none focus:border-primary text-charcoal font-semibold"
@@ -147,8 +152,9 @@ export default function PartnerSection() {
 
                       {/* Message */}
                       <AnimatedSection variant="stagger-item">
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">How would you like to collaborate?</label>
+                        <label htmlFor="collabIntentText" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">How would you like to collaborate?</label>
                         <textarea
+                          id="collabIntentText"
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
                           placeholder="Outline the scope of proposed workshops or engagements..."
@@ -182,7 +188,7 @@ export default function PartnerSection() {
                       Opening Your Email Client...
                     </h4>
                     <p className="font-body text-sm text-muted-grey leading-relaxed max-w-sm mb-6">
-                      If your email app didn't open automatically, please copy the text below and email it directly to <strong className="text-charcoal">skillarc.org@gmail.com</strong>:
+                      If your email app {"didn't"} open automatically, please copy the text below and email it directly to <strong className="text-charcoal">skillarc.org@gmail.com</strong>:
                     </p>
 
                     <div className="w-full text-left bg-white border border-charcoal/10 rounded-xl p-4 font-mono text-xs text-charcoal/90 overflow-x-auto whitespace-pre-wrap max-h-60 select-all">

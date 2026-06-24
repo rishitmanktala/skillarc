@@ -16,6 +16,7 @@ const DETAILED_PROGRAMS = [
       "Empathy and healthy peer relationship management",
     ],
     gradient: "from-primary/20 to-accent/20",
+    image: "/images/our-work/life-skills-sessions.jpg",
   },
   {
     num: "02",
@@ -29,6 +30,7 @@ const DETAILED_PROGRAMS = [
       "Collaborative team leadership and feedback structures",
     ],
     gradient: "from-accent/20 to-highlight/20",
+    image: "/images/our-work/leadership-programs.jpg",
   },
   {
     num: "03",
@@ -42,6 +44,7 @@ const DETAILED_PROGRAMS = [
       "Career pathway mapping and professional networking skills",
     ],
     gradient: "from-highlight/20 to-primary/20",
+    image: "/images/our-work/youth-development-initiatives.jpg",
   },
   {
     num: "04",
@@ -55,6 +58,7 @@ const DETAILED_PROGRAMS = [
       "Parent-educator engagement and support circles",
     ],
     gradient: "from-primary/25 to-accent/25",
+    image: "/images/our-work/school-and-community-initiatives.jpg",
   },
 ];
 
@@ -87,17 +91,26 @@ export default function ProgramsGrid() {
               } gap-6 lg:gap-8 items-center`}
             >
               
-              {/* Image Placeholder Side */}
+              {/* Image Side */}
               <div className="w-full lg:w-1/2">
                 <div
                   className={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-tr ${program.gradient} border border-[#2D2D2D]/5 flex items-center justify-center relative overflow-hidden shadow-sm hover:scale-[1.01] transition-transform duration-500 select-none`}
                 >
-                  <span className="font-display font-bold text-lg text-charcoal/30">
-                    {program.title} Media
-                  </span>
-                  
-                  {/* Floating Blob in Placeholder */}
-                  <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-white/40 blur-xl" />
+                  {program.image ? (
+                    <img
+                      src={program.image}
+                      alt={program.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <span className="font-display font-bold text-lg text-charcoal/30">
+                        {program.title} Media
+                      </span>
+                      {/* Floating Blob in Placeholder */}
+                      <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-white/40 blur-xl" />
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -109,7 +122,7 @@ export default function ProgramsGrid() {
                   <div className="w-12 h-12 rounded-xl bg-primary text-charcoal font-display font-bold text-lg flex items-center justify-center shadow-sm select-none">
                     {program.num}
                   </div>
-                  <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full select-none">
+                  <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full select-none">
                     {program.audience}
                   </span>
                 </div>
@@ -125,14 +138,14 @@ export default function ProgramsGrid() {
                 </p>
 
                 {/* Learning outcomes bullet list */}
-                <h4 className="font-body font-bold text-sm text-charcoal uppercase tracking-wider mb-3">
+                <h3 className="font-body font-bold text-sm text-charcoal uppercase tracking-wider mb-3">
                   What participants learn:
-                </h4>
+                </h3>
                 
                 <ul className="space-y-2.5 w-full">
                   {program.learnList.map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-accent-dark shrink-0 mt-0.5" />
                       <span className="font-body text-sm md:text-base text-charcoal/90 leading-relaxed">
                         {item}
                       </span>

@@ -3,12 +3,15 @@
 
 @theme {
   --color-primary: #A8D5E2;
+  --color-primary-dark: #376C7A;
   --color-accent: #F2B5C4;
+  --color-accent-dark: #9E3D52;
   --color-background-custom: #FDF6F0;
   --color-card-custom: #FFFFFF;
   --color-highlight: #E8C97A;
+  --color-highlight-dark: #9B7524;
   --color-charcoal: #2D2D2D;
-  --color-muted-grey: #7A7A7A;
+  --color-muted-grey: #5A5A5A;
 
   --font-display: 'Playfair Display', serif;
   --font-body: 'DM Sans', sans-serif;
@@ -26,12 +29,15 @@
 
 :root {
   --primary: #A8D5E2;
+  --primary-dark: #376C7A;
   --accent: #F2B5C4;
+  --accent-dark: #9E3D52;
   --background: #FDF6F0;
   --card: #FFFFFF;
   --highlight: #E8C97A;
+  --highlight-dark: #9B7524;
   --charcoal: #2D2D2D;
-  --muted-grey: #7A7A7A;
+  --muted-grey: #5A5A5A;
 }
 
 html {
@@ -229,15 +235,15 @@ body::before {
   padding: 0.75rem;
   border-radius: 0.75rem;
   background-color: rgba(168, 213, 226, 0.1);
-  color: #A8D5E2;
+  color: var(--primary-dark);
   margin-bottom: 1rem;
   flex-shrink: 0;
 }
 .icon-box--accent {
   background-color: rgba(242, 181, 196, 0.1);
-  color: #F2B5C4;
+  color: var(--accent-dark);
 }
 .icon-box--highlight {
   background-color: rgba(232, 201, 122, 0.1);
-  color: #E8C97A;
+  color: var(--highlight-dark);
 }

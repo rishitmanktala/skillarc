@@ -32,7 +32,7 @@ const ROLES = [
     title: "Communications & Design Intern",
     dept: "Marketing",
     duration: "3 Months (Remote)",
-    description: "Design social media campaigns, create posters and graphic toolkits, write newsletters, and coordinate website updates to promote SkillArc's impact activities.",
+    description: "Design social media campaigns, create posters and graphic toolkits, write newsletters, and coordinate website updates to promote SkillARC's impact activities.",
     requirements: [
       "Proficiency in Figma, Canva, or Adobe Illustrator",
       "Basic copy writing and editing capabilities",
@@ -77,7 +77,7 @@ export default function InternshipSection() {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Kickstart Your Career
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -118,13 +118,13 @@ export default function InternshipSection() {
                 {/* Key Requirements list */}
                 <div className="border-t border-charcoal/5 pt-5 mb-8">
                   <h4 className="font-body font-bold text-xs text-charcoal/80 uppercase tracking-widest mb-3 flex items-center gap-1.5 select-none">
-                    <FileText className="w-3.5 h-3.5 text-accent" />
+                    <FileText className="w-3.5 h-3.5 text-accent-dark" />
                     Requirements
                   </h4>
                   <ul className="space-y-2.5">
                     {role.requirements.map((item) => (
                       <li key={item} className="flex items-start gap-2.5">
-                        <Check className="w-4.5 h-4.5 text-accent shrink-0 mt-0.5" />
+                        <Check className="w-4.5 h-4.5 text-accent-dark shrink-0 mt-0.5" />
                         <span className="font-body text-sm text-charcoal/90">
                           {item}
                         </span>
@@ -164,8 +164,9 @@ export default function InternshipSection() {
                   >
                     {/* Role Applied For Dropdown */}
                     <AnimatedSection variant="stagger-item">
-                      <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Role Applied For</label>
+                      <label htmlFor="roleSelect" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Role Applied For</label>
                       <select
+                        id="roleSelect"
                         value={selectedRole}
                         onChange={(e) => setSelectedRole(e.target.value)}
                         className="w-full px-4 py-2.5 rounded-xl border border-charcoal/10 bg-white focus:outline-none focus:border-primary text-charcoal font-semibold"
@@ -180,8 +181,9 @@ export default function InternshipSection() {
 
                     {/* Full Name */}
                     <AnimatedSection variant="stagger-item">
-                      <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Full Name</label>
+                      <label htmlFor="fullName" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Full Name</label>
                       <input
+                        id="fullName"
                         type="text"
                         required
                         value={name}
@@ -194,8 +196,9 @@ export default function InternshipSection() {
                     {/* Email & Phone */}
                     <AnimatedSection variant="stagger-item" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Email ID</label>
+                        <label htmlFor="emailId" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Email ID</label>
                         <input
+                          id="emailId"
                           type="email"
                           required
                           value={email}
@@ -205,8 +208,9 @@ export default function InternshipSection() {
                         />
                       </div>
                       <div>
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Phone Number</label>
+                        <label htmlFor="phoneNumber" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Phone Number</label>
                         <input
+                          id="phoneNumber"
                           type="tel"
                           required
                           value={phone}
@@ -220,8 +224,9 @@ export default function InternshipSection() {
                     {/* City & Age Group */}
                     <AnimatedSection variant="stagger-item" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">City</label>
+                        <label htmlFor="cityName" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">City</label>
                         <input
+                          id="cityName"
                           type="text"
                           required
                           value={city}
@@ -231,8 +236,9 @@ export default function InternshipSection() {
                         />
                       </div>
                       <div>
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Age Group</label>
+                        <label htmlFor="ageGroup" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Age Group</label>
                         <select
+                          id="ageGroup"
                           value={ageGroup}
                           onChange={(e) => setAgeGroup(e.target.value)}
                           className="w-full px-4 py-2.5 rounded-xl border border-charcoal/10 bg-white focus:outline-none focus:border-primary text-charcoal"
@@ -246,8 +252,9 @@ export default function InternshipSection() {
 
                     {/* Statement of purpose */}
                     <AnimatedSection variant="stagger-item">
-                      <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Why are you a good fit for this role?</label>
+                      <label htmlFor="fitStatementText" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Why are you a good fit for this role?</label>
                       <textarea
+                        id="fitStatementText"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Outline any prior projects or coursework..."
@@ -281,7 +288,7 @@ export default function InternshipSection() {
                     Opening Your Email Client...
                   </h4>
                   <p className="font-body text-sm text-muted-grey leading-relaxed max-w-sm mb-6">
-                    If your email app didn't open automatically, please copy the text below and email it directly to <strong className="text-charcoal">skillarc.org@gmail.com</strong>:
+                    If your email app {"didn't"} open automatically, please copy the text below and email it directly to <strong className="text-charcoal">skillarc.org@gmail.com</strong>:
                   </p>
 
                   <div className="w-full text-left bg-white border border-charcoal/10 rounded-xl p-4 font-mono text-xs text-charcoal/90 overflow-x-auto whitespace-pre-wrap max-h-60 select-all">

@@ -22,11 +22,11 @@ const PARTNERS = [
 
 export default function CollaborationsSection() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background-custom border-t border-primary/10">
+    <section id="collaborations" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background-custom border-t border-primary/10 scroll-mt-20">
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Collaborations
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -54,7 +54,7 @@ export default function CollaborationsSection() {
                 className="card-tile flex flex-col justify-between h-32 p-5 group cursor-pointer"
               >
                 <div className="flex justify-between items-start">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-accent/10 group-hover:text-accent transition-colors duration-300">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary-dark group-hover:bg-accent/10 group-hover:text-accent-dark transition-colors duration-300">
                     <Handshake className="w-5 h-5 shrink-0" />
                   </div>
                 </div>

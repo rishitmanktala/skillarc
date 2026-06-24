@@ -16,7 +16,7 @@ export const IMPACT_STATS = [
   { label: "Communities Reached", value: "10+" },
 ] as const;
 
-// core programmatic offerings of SkillArc
+// core programmatic offerings of SkillARC
 export const PROGRAMS = [
   {
     title: "Life Skills Sessions",
@@ -36,7 +36,7 @@ export const PROGRAMS = [
   },
 ] as const;
 
-// UN Sustainable Development Goals (SDGs) aligned with SkillArc's work
+// UN Sustainable Development Goals (SDGs) aligned with SkillARC's work
 export const SDG_GOALS = [
   {
     goal: "SDG 4",

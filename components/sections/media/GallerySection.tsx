@@ -6,33 +6,172 @@ import { Camera, X, ArrowLeft, ArrowRight } from "lucide-react";
 
 const TABS = ["Workshops", "Events", "Campaigns", "Volunteers", "Community"];
 
-// Generate 12 placeholder items per tab with nice gradient classes
-const getGalleryItems = (tabName: string) => {
-  const gradients = [
-    "from-primary/20 to-accent/20",
-    "from-accent/20 to-highlight/20",
-    "from-highlight/20 to-primary/20",
-    "from-primary/30 to-background-custom border-primary/20",
-    "from-accent/30 to-background-custom border-accent/20",
-    "from-highlight/30 to-background-custom border-highlight/20",
-  ];
+interface GalleryItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  src: string;
+  description: string;
+}
 
-  return Array.from({ length: 12 }).map((_, i) => {
-    const gradIndex = (i + tabName.charCodeAt(0)) % gradients.length;
-    return {
-      id: `${tabName}-${i}`,
-      title: `${tabName.slice(0, -1)} Detail ${i + 1}`,
-      subtitle: `${tabName.slice(0, -1)} — March 2026`,
-      gradient: gradients[gradIndex],
-    };
-  });
+const GALLERY_DATA: Record<string, GalleryItem[]> = {
+  Workshops: [
+    {
+      id: "workshop-1",
+      title: "Interactive Hygiene Session",
+      subtitle: "Workshops — April 2026",
+      src: "/images/media/workshops/dental-hygiene-61.jpg",
+      description: "Adolescent students learning basic oral and dental hygiene rules through interactive diagrams and models.",
+    },
+    {
+      id: "workshop-2",
+      title: "Dental Hygiene Workshop",
+      subtitle: "Workshops — April 2026",
+      src: "/images/media/workshops/dental-hygiene-9.jpg",
+      description: "Adolescents actively demonstrating teeth brushing techniques on learning aids during an interactive session.",
+    },
+    {
+      id: "workshop-3",
+      title: "Dental Health Awareness",
+      subtitle: "Workshops — April 2026",
+      src: "/images/media/workshops/dental-hygiene-19.jpg",
+      description: "Interactive dental care workshop helping young students overcome fear of dental checkups and build healthy habits.",
+    },
+    {
+      id: "workshop-4",
+      title: "Financial Literacy Module",
+      subtitle: "Workshops — March 2026",
+      src: "/images/media/workshops/financial-literacy-5.jpg",
+      description: "Learning the fundamentals of savings, budgeting, and financial planning through gameplay and roleplays.",
+    },
+  ],
+  Events: [
+    {
+      id: "event-1",
+      title: "Interactive Session at Govt College",
+      subtitle: "Events — May 2026",
+      src: "/images/media/events/govt-college-4.jpg",
+      description: "SkillARC's team conducting a large-group interaction on life choices, career planning, and peer-to-peer respect.",
+    },
+    {
+      id: "event-2",
+      title: "Life Skills Special Event",
+      subtitle: "Events — May 2026",
+      src: "/images/media/events/life-skills-lessons.jpg",
+      description: "A major session where students share their personal reflection journals and celebrate small changes together.",
+    },
+    {
+      id: "event-3",
+      title: "Dental Hygiene Screening Event",
+      subtitle: "Events — April 2026",
+      src: "/images/media/events/dental-hygiene-5.jpg",
+      description: "A community checkup drive organized in collaboration with local medical volunteers.",
+    },
+    {
+      id: "event-4",
+      title: "Oral Health Camp",
+      subtitle: "Events — April 2026",
+      src: "/images/media/events/dental-hygiene-3.jpg",
+      description: "Providing personalized advice and kits to children at a local community center.",
+    },
+  ],
+  Campaigns: [
+    {
+      id: "campaign-1",
+      title: "Self Awareness Campaign",
+      subtitle: "Campaigns — June 2026",
+      src: "/images/media/campaigns/self-awareness-1.jpg",
+      description: "Encouraging teenagers to define their core values and identify strengths, building a strong self-identity.",
+    },
+    {
+      id: "campaign-2",
+      title: "Hygiene & Wellness Campaign",
+      subtitle: "Campaigns — May 2026",
+      src: "/images/media/campaigns/dental-hygiene-36.jpg",
+      description: "Sensitizing local children and parents about preventive health habits and community sanitation.",
+    },
+    {
+      id: "campaign-3",
+      title: "STEM Outreach Drive",
+      subtitle: "Campaigns — May 2026",
+      src: "/images/media/campaigns/durtagni-collab-stem-3.jpg",
+      description: "A volunteer campaign promoting science education and creative hands-on projects for underrepresented young girls.",
+    },
+    {
+      id: "campaign-4",
+      title: "Seva Community Mobilization",
+      subtitle: "Campaigns — April 2026",
+      src: "/images/media/campaigns/seva-19.jpg",
+      description: "Empowering college youth to lead community service initiatives and build empathy for civic challenges.",
+    },
+  ],
+  Volunteers: [
+    {
+      id: "volunteer-1",
+      title: "Durtagni STEM Collaboration",
+      subtitle: "Volunteers — June 2026",
+      src: "/images/media/volunteers/durtagni-collab-stem-76.jpg",
+      description: "Volunteers mentoring students during a hands-on physics and engineering experimental workshop.",
+    },
+    {
+      id: "volunteer-2",
+      title: "Gentleman in Making - Session 1",
+      subtitle: "Volunteers — June 2026",
+      src: "/images/media/volunteers/gentleman-in-making-session-1-101.jpg",
+      description: "Mentors facilitating sessions for young boys on gender equality, emotional expression, and character building.",
+    },
+    {
+      id: "volunteer-3",
+      title: "STEM Experiment Group",
+      subtitle: "Volunteers — May 2026",
+      src: "/images/media/volunteers/durtagni-collab-stem-72.jpg",
+      description: "Mentoring children as they build simple circuits and robotic modules, sparking curiosities.",
+    },
+    {
+      id: "volunteer-4",
+      title: "Youth Mentorship Workshop",
+      subtitle: "Volunteers — May 2026",
+      src: "/images/media/volunteers/mentorship-workshop-4.jpg",
+      description: "Building strong bonds between volunteers and teenagers, sharing guidance on navigation of modern life hurdles.",
+    },
+  ],
+  Community: [
+    {
+      id: "community-1",
+      title: "Community Dental Outreach",
+      subtitle: "Community — June 2026",
+      src: "/images/media/community/dental-hygiene-61.jpg",
+      description: "Local families participating in a health sensitization meeting conducted in the local community hall.",
+    },
+    {
+      id: "community-2",
+      title: "Community Life Skills Lesson",
+      subtitle: "Community — June 2026",
+      src: "/images/media/community/life-skills-lessons.jpg",
+      description: "Outdoor peer circle discussing local issues, collective action steps, and daily reflection practices.",
+    },
+    {
+      id: "community-3",
+      title: "Self-Awareness Community Meet",
+      subtitle: "Community — May 2026",
+      src: "/images/media/community/self-awareness-1.jpg",
+      description: "Facilitators involving community elders and youth in dialogues regarding positive self-concept.",
+    },
+    {
+      id: "community-4",
+      title: "Community Health Drive",
+      subtitle: "Community — May 2026",
+      src: "/images/media/community/dental-hygiene-3.jpg",
+      description: "Distributing wellness guides and hygiene kits to families, promoting preventative health practices.",
+    },
+  ],
 };
 
 export default function GallerySection() {
   const [activeTab, setActiveTab] = useState("Workshops");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const items = getGalleryItems(activeTab);
+  const items = GALLERY_DATA[activeTab] || [];
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -61,6 +200,15 @@ export default function GallerySection() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
+        {/* Section Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-16 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3">
+            Visual Archives
+          </span>
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
+            Our Photo Gallery
+          </h2>
+        </div>
         
         {/* Tab Switcher Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-16 select-none">
@@ -94,10 +242,10 @@ export default function GallerySection() {
           })}
         </div>
 
-        {/* Masonry-style Grid */}
+        {/* Grid of Actual Images */}
         <motion.div
           layout
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 select-none"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 select-none"
         >
           <AnimatePresence mode="popLayout">
             {items.map((item, index) => (
@@ -114,18 +262,26 @@ export default function GallerySection() {
                   duration: 0.3 
                 }}
                 onClick={() => setLightboxIndex(index)}
-                className={`cursor-pointer w-full aspect-square rounded-2xl bg-gradient-to-tr ${item.gradient} border border-[#2D2D2D]/5 flex flex-col items-center justify-center p-6 text-center shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] hover:shadow-[0_12px_30px_-6px_rgba(45,45,45,0.08)] transition-all duration-300 relative overflow-hidden group`}
+                className="cursor-pointer w-full aspect-square rounded-2xl border border-[#2D2D2D]/5 shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] hover:shadow-[0_12px_30px_-6px_rgba(45,45,45,0.08)] transition-all duration-300 relative overflow-hidden group bg-charcoal"
               >
-                {/* Overlay Blob */}
-                <div className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-white/40 blur-xl group-hover:scale-110 transition-transform duration-500" />
-                
-                <Camera className="w-8 h-8 text-charcoal/30 mb-3 group-hover:scale-110 transition-transform duration-300 shrink-0" />
-                <h4 className="font-display font-semibold text-sm text-charcoal mb-1">
-                  {item.title}
-                </h4>
-                <p className="font-body text-[10px] font-bold text-muted-grey uppercase tracking-wider">
-                  {item.subtitle}
-                </p>
+                {/* Actual Image */}
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-75"
+                />
+
+                {/* Sleek Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-5 flex flex-col justify-end text-left opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <span className="font-body text-[10px] font-bold text-[#89c5d7] uppercase tracking-wider block mb-1">
+                      {item.subtitle}
+                    </span>
+                    <h3 className="font-display font-bold text-sm md:text-base text-white leading-tight">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -144,7 +300,7 @@ export default function GallerySection() {
               {/* Close Button */}
               <button
                 onClick={() => setLightboxIndex(null)}
-                className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none"
+                className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none cursor-pointer"
                 aria-label="Close Lightbox"
               >
                 <X className="w-6 h-6" />
@@ -153,7 +309,7 @@ export default function GallerySection() {
               {/* Prev Button */}
               <button
                 onClick={handlePrev}
-                className="absolute left-6 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none"
+                className="absolute left-6 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none cursor-pointer hidden md:block"
                 aria-label="Previous Image"
               >
                 <ArrowLeft className="w-6 h-6" />
@@ -167,24 +323,32 @@ export default function GallerySection() {
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
-                className={`max-w-xl w-full aspect-square rounded-[2rem] bg-gradient-to-tr ${items[lightboxIndex].gradient} border border-white/10 flex flex-col items-center justify-center p-12 text-center relative select-none`}
+                className="max-w-2xl w-full aspect-[4/3] rounded-[2rem] bg-charcoal border border-white/10 flex flex-col justify-end overflow-hidden relative shadow-2xl"
               >
-                <Camera className="w-16 h-16 text-charcoal/20 mb-6 shrink-0" />
-                <h3 className="font-display font-bold text-2xl text-charcoal mb-2">
-                  {items[lightboxIndex].title}
-                </h3>
-                <p className="font-body text-xs font-bold text-muted-grey uppercase tracking-widest">
-                  {items[lightboxIndex].subtitle}
-                </p>
-                <p className="font-body text-sm text-charcoal/70 mt-6 leading-relaxed max-w-sm">
-                  This placeholder represents a high-resolution photograph capturing the active engagement of youth during {activeTab.toLowerCase()} sessions.
-                </p>
+                <img
+                  src={items[lightboxIndex].src}
+                  alt={items[lightboxIndex].title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                
+                {/* Text overlay at bottom of lightbox */}
+                <div className="relative z-10 w-full bg-gradient-to-t from-black/95 via-black/50 to-transparent p-6 md:p-8 pt-20 text-left">
+                  <span className="font-body text-xs font-semibold text-[#89c5d7] uppercase tracking-widest block mb-2">
+                    {items[lightboxIndex].subtitle}
+                  </span>
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-white mb-2">
+                    {items[lightboxIndex].title}
+                  </h3>
+                  <p className="font-body text-xs md:text-sm text-white/80 leading-relaxed max-w-xl">
+                    {items[lightboxIndex].description}
+                  </p>
+                </div>
               </motion.div>
 
               {/* Next Button */}
               <button
                 onClick={handleNext}
-                className="absolute right-6 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none"
+                className="absolute right-6 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none cursor-pointer hidden md:block"
                 aria-label="Next Image"
               >
                 <ArrowRight className="w-6 h-6" />

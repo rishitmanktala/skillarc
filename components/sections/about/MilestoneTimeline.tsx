@@ -87,7 +87,7 @@ export default function MilestoneTimeline() {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Our Journey
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -131,7 +131,7 @@ export default function MilestoneTimeline() {
                         delay={delay}
                         className="card-surface text-right flex flex-col items-end"
                       >
-                        <span className="font-display font-bold text-sm text-primary bg-primary/10 px-4.5 py-1 rounded-full mb-3 select-none">
+                        <span className="font-display font-bold text-sm text-primary-dark bg-primary/10 px-4.5 py-1 rounded-full mb-3 select-none">
                           {milestone.year}
                         </span>
                         <h3 className="font-display font-bold text-lg text-charcoal mb-2">
@@ -152,7 +152,7 @@ export default function MilestoneTimeline() {
                         delay={delay}
                         className="card-surface"
                       >
-                        <span className="font-display font-bold text-sm text-primary bg-primary/10 px-4.5 py-1 rounded-full mb-3 inline-block select-none">
+                        <span className="font-display font-bold text-sm text-primary-dark bg-primary/10 px-4.5 py-1 rounded-full mb-3 inline-block select-none">
                           {milestone.year}
                         </span>
                         <h3 className="font-display font-bold text-lg text-charcoal mb-2">
@@ -172,7 +172,7 @@ export default function MilestoneTimeline() {
                           delay={delay}
                           className="card-surface"
                         >
-                          <span className="font-display font-bold text-sm text-primary bg-primary/10 px-4.5 py-1 rounded-full mb-3 inline-block select-none">
+                          <span className="font-display font-bold text-sm text-primary-dark bg-primary/10 px-4.5 py-1 rounded-full mb-3 inline-block select-none">
                             {milestone.year}
                           </span>
                           <h3 className="font-display font-bold text-lg text-charcoal mb-2">

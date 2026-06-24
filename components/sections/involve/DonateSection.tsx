@@ -28,7 +28,7 @@ export default function DonateSection() {
   const [isCopied, setIsCopied] = useState(false);
 
   const copyUPI = () => {
-    navigator.clipboard.writeText("skillarc@upi");
+    navigator.clipboard.writeText("SkillARC@upi");
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);
   };
@@ -39,7 +39,7 @@ export default function DonateSection() {
         
         {/* Section Heading */}
         <AnimatedSection variant="fade-up" className="text-center max-w-2xl mx-auto mb-12">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-white px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-white px-3.5 py-1.5 rounded-full mb-3 select-none">
             Support The Cause
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -75,7 +75,7 @@ export default function DonateSection() {
 
         {/* Dynamic Impact Display Box */}
         <AnimatedSection variant="scale-in" delay={0.2} className="card-surface p-6 md:p-8 max-w-2xl mx-auto text-center mb-12 min-h-[140px] flex flex-col justify-center">
-          <span className="inline-block font-body text-[10px] font-bold text-primary uppercase tracking-widest mb-2 select-none">
+          <span className="inline-block font-body text-[10px] font-bold text-primary-dark uppercase tracking-widest mb-2 select-none">
             The Impact
           </span>
           <div className="overflow-hidden">
@@ -100,10 +100,10 @@ export default function DonateSection() {
           {/* Column 1: UPI Transfer */}
           <AnimatedSection variant="stagger-item" className="card-surface p-6 md:p-8 flex flex-col justify-between hover:shadow-lg hover:border-accent/20 transition-all duration-300">
             <div>
-              <h4 className="font-display font-bold text-lg text-charcoal mb-4 flex items-center gap-2.5">
-                <CreditCard className="w-5 h-5 text-accent" />
+              <h3 className="font-display font-bold text-lg text-charcoal mb-4 flex items-center gap-2.5">
+                <CreditCard className="w-5 h-5 text-accent-dark" />
                 UPI Transfer
-              </h4>
+              </h3>
               <p className="font-body text-sm text-muted-grey leading-relaxed mb-6">
                 You can transfer support funds instantly using any UPI app (Google Pay, PhonePe, Paytm) by targeting our ID below.
               </p>
@@ -111,7 +111,7 @@ export default function DonateSection() {
             
             <div className="flex items-center gap-2 w-full">
               <div className="bg-background-custom border border-charcoal/5 rounded-xl px-4 py-2.5 font-mono text-sm text-charcoal flex-grow select-all">
-                skillarc@upi
+                SkillARC@upi
               </div>
               <motion.button
                 onClick={copyUPI}
@@ -127,14 +127,14 @@ export default function DonateSection() {
 
           {/* Column 2: Bank Transfer */}
           <AnimatedSection variant="stagger-item" className="card-surface p-6 md:p-8 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
-            <h4 className="font-display font-bold text-lg text-charcoal mb-4 flex items-center gap-2.5">
-              <Landmark className="w-5 h-5 text-primary" />
+            <h3 className="font-display font-bold text-lg text-charcoal mb-4 flex items-center gap-2.5">
+              <Landmark className="w-5 h-5 text-primary-dark" />
               Bank Account Details
-            </h4>
+            </h3>
             <div className="font-body text-xs md:text-sm text-charcoal/90 space-y-2">
               <div className="flex justify-between border-b border-charcoal/5 pb-2">
                 <span className="text-muted-grey">Account Name</span>
-                <span className="font-semibold">SkillArc Foundation</span>
+                <span className="font-semibold">SkillARC Foundation</span>
               </div>
               <div className="flex justify-between border-b border-charcoal/5 pb-2">
                 <span className="text-muted-grey">Bank Name</span>

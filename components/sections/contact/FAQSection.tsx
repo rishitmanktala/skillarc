@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     question: "How can I donate to SkillARC?",
-    answer: "Your support directly funds learning toolkits, session curriculums, and local youth-led campaigns. You can donate instantly via UPI transfer to skillarc@upi or execute a bank wire transfer. Check bank account details on the Donate section of our Get Involved page.",
+    answer: "Your support directly funds learning toolkits, session curriculums, and local youth-led campaigns. You can donate instantly via UPI transfer to SkillARC@upi or execute a bank wire transfer. Check bank account details on the Donate section of our Get Involved page.",
   },
   {
     question: "How can my Youth Foundation collaborate?",
@@ -52,7 +52,7 @@ export default function FAQSection() {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16 select-none">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3">
             Got Questions?
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -87,7 +87,7 @@ export default function FAQSection() {
                   
                   {/* Rotating pink chevron arrow */}
                   <ChevronDown
-                    className={`w-5 h-5 text-accent shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-accent-dark shrink-0 transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />

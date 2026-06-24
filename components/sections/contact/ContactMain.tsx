@@ -54,9 +54,9 @@ export default function ContactMain() {
           <div className="bg-primary/10 rounded-2xl p-6 md:p-8 border border-primary/20 space-y-8 flex flex-col justify-between">
             
             <div>
-              <h3 className="font-display font-bold text-xl md:text-2xl text-charcoal mb-2">
+              <h2 className="font-display font-bold text-xl md:text-2xl text-charcoal mb-2">
                 Connect With Us
-              </h3>
+              </h2>
               <p className="font-body text-sm text-muted-grey leading-relaxed mb-6">
                 Have questions about our sessions, campaigns, or partnerships? Reach out and we will respond shortly.
               </p>
@@ -66,7 +66,7 @@ export default function ContactMain() {
             <div className="space-y-5">
               {/* Email */}
               <div className="flex items-center gap-4 bg-white/60 p-4.5 rounded-xl border border-white/50 shadow-sm">
-                <div className="p-3 bg-white rounded-xl shadow-inner text-accent shrink-0 select-none">
+                <div className="p-3 bg-white rounded-xl shadow-inner text-accent-dark shrink-0 select-none">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="overflow-hidden">
@@ -79,7 +79,7 @@ export default function ContactMain() {
 
               {/* Phone */}
               <div className="flex items-center gap-4 bg-white/60 p-4.5 rounded-xl border border-white/50 shadow-sm">
-                <div className="p-3 bg-white rounded-xl shadow-inner text-primary shrink-0 select-none">
+                <div className="p-3 bg-white rounded-xl shadow-inner text-primary-dark shrink-0 select-none">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -92,7 +92,7 @@ export default function ContactMain() {
 
               {/* Location */}
               <div className="flex items-center gap-4 bg-white/60 p-4.5 rounded-xl border border-white/50 shadow-sm">
-                <div className="p-3 bg-white rounded-xl shadow-inner text-highlight shrink-0 select-none">
+                <div className="p-3 bg-white rounded-xl shadow-inner text-highlight-dark shrink-0 select-none">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -172,8 +172,9 @@ export default function ContactMain() {
                     {/* Full Name */}
                     <AnimatedSection variant="stagger-item">
                       <div>
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Full Name</label>
+                        <label htmlFor="fullName" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Full Name</label>
                         <input
+                          id="fullName"
                           type="text"
                           value={name}
                           onChange={(e) => {
@@ -197,8 +198,9 @@ export default function ContactMain() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <AnimatedSection variant="stagger-item">
                         <div>
-                          <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Email Address</label>
+                          <label htmlFor="emailAddress" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Email Address</label>
                           <input
+                            id="emailAddress"
                             type="email"
                             value={email}
                             onChange={(e) => {
@@ -220,8 +222,9 @@ export default function ContactMain() {
                       
                       <AnimatedSection variant="stagger-item">
                         <div>
-                          <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Phone Number (Optional)</label>
+                          <label htmlFor="phoneNumber" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Phone Number (Optional)</label>
                           <input
+                            id="phoneNumber"
                             type="tel"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
@@ -235,8 +238,9 @@ export default function ContactMain() {
                     {/* Purpose of Contacting */}
                     <AnimatedSection variant="stagger-item">
                       <div>
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Purpose of Contacting</label>
+                        <label htmlFor="contactPurpose" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Purpose of Contacting</label>
                         <select
+                          id="contactPurpose"
                           value={purpose}
                           onChange={(e) => setPurpose(e.target.value)}
                           className="w-full px-4 py-2.5 rounded-xl border border-charcoal/10 bg-white focus:outline-none focus:border-primary text-charcoal font-semibold"
@@ -254,8 +258,9 @@ export default function ContactMain() {
                     {/* Message */}
                     <AnimatedSection variant="stagger-item">
                       <div>
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Message</label>
+                        <label htmlFor="messageText" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Message</label>
                         <textarea
+                          id="messageText"
                           value={message}
                           onChange={(e) => {
                             setMessage(e.target.value);
@@ -301,7 +306,7 @@ export default function ContactMain() {
                   </h4>
                   
                   <p className="font-body text-sm text-muted-grey leading-relaxed max-w-lg mb-6">
-                    If your email app didn't open automatically, please copy the text below and email it directly to <strong className="text-charcoal">skillarc.org@gmail.com</strong>:
+                    If your email app {"didn't"} open automatically, please copy the text below and email it directly to <strong className="text-charcoal">skillarc.org@gmail.com</strong>:
                   </p>
 
                   <div className="w-full text-left bg-white border border-charcoal/10 rounded-xl p-4 font-mono text-xs text-charcoal/90 overflow-x-auto whitespace-pre-wrap max-h-60 select-all">

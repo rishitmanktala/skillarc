@@ -9,7 +9,11 @@ export default function Loader() {
 
   useEffect(() => {
     const isDev = process.env.NODE_ENV === "development";
-    const hasVisited = isDev ? false : sessionStorage.getItem("skillarc_visited");
+    if (isDev) {
+      const timer = setTimeout(() => setIsDone(true), 0);
+      return () => clearTimeout(timer);
+    }
+    const hasVisited = sessionStorage.getItem("SkillARC_visited");
     if (!hasVisited) {
       // Defer state update to next tick to avoid cascading render warnings
       const initTimer = setTimeout(() => setLoading(true), 0);
@@ -17,7 +21,7 @@ export default function Loader() {
       // Wait for animation + fadeout to complete before fully unmounting
       const timer = setTimeout(() => {
         setLoading(false);
-        sessionStorage.setItem("skillarc_visited", "true");
+        sessionStorage.setItem("SkillARC_visited", "true");
         // Let it unmount after exit animation
         setTimeout(() => setIsDone(true), 500);
       }, 2200);

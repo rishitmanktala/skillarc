@@ -16,6 +16,16 @@ export default function FounderNote() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
+        {/* Section Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-16 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3">
+            Leadership
+          </span>
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
+            {"Founder's Message"}
+          </h2>
+        </div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -32,7 +42,7 @@ export default function FounderNote() {
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
               className="relative w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-primary via-accent to-highlight shadow-md mb-6 cursor-pointer"
             >
-              <div className="w-full h-full rounded-full bg-white flex items-center justify-center text-charcoal/30 font-display text-lg font-bold select-none">
+              <div className="w-full h-full rounded-full bg-white flex items-center justify-center text-charcoal/70 font-display text-lg font-bold select-none">
                 SG
               </div>
             </motion.div>
@@ -41,7 +51,7 @@ export default function FounderNote() {
               Shreya Gupta
             </h3>
             
-            <p className="font-body text-xs font-bold text-accent uppercase tracking-widest mt-1">
+            <p className="font-body text-xs font-bold text-accent-dark uppercase tracking-widest mt-1">
               Founder
             </p>
           </div>
@@ -54,7 +64,7 @@ export default function FounderNote() {
               
               {/* Quote Pull-out (Pink) */}
               <div className="relative z-10 p-5 mb-8 bg-accent/15 border-l-4 border-accent rounded-r-2xl flex gap-4 items-start">
-                <Quote className="w-5 h-5 text-accent shrink-0 mt-1" />
+                <Quote className="w-5 h-5 text-accent-dark shrink-0 mt-1" />
                 <p className="font-display italic text-lg text-charcoal font-semibold leading-relaxed">
                   At SkillARC, we believe that every underprivileged individual has the potential to create a better future when given the right guidance, skills, and opportunities.
                 </p>

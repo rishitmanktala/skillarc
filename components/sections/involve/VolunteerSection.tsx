@@ -9,28 +9,28 @@ const TRACKS = [
   {
     title: "School Students",
     subtitle: "Ages 14–17",
-    icon: <GraduationCap className="w-6 h-6 text-primary" />,
+    icon: <GraduationCap className="w-6 h-6 text-primary-dark" />,
     requirements: "Must be currently enrolled in high school (Ages 14-17) and provide parent/guardian consent. Commitment of at least 2 hours per week.",
     benefits: "Official certificate of volunteering, experiential community service credit, peer collaboration skill-building, and high school mentorship.",
   },
   {
     title: "College Students",
     subtitle: "Ages 18–22",
-    icon: <Users className="w-6 h-6 text-accent" />,
+    icon: <Users className="w-6 h-6 text-accent-dark" />,
     requirements: "Must be enrolled in an undergraduate or post-graduate degree course. Commitment of 4–6 hours per week for at least 3 months.",
     benefits: "Leadership training certificates, live project coordination experience, recommendation letters, and networking with corporate mentors.",
   },
   {
     title: "Youth Volunteers",
     subtitle: "Ages 23+",
-    icon: <Calendar className="w-6 h-6 text-highlight" />,
+    icon: <Calendar className="w-6 h-6 text-highlight-dark" />,
     requirements: "Working professionals, corporate employees, or independent graduates. Commitment of flexible hours (weekend projects or online mentorship).",
     benefits: "Inter-corporate networking, specialized training delivery, professional development credits, and direct grassroots impact coaching.",
   },
 ];
 
 export default function VolunteerSection() {
-  const [selectedTrack, setSelectedTrack] = useState<number | null>(0);
+  const [selectedTrack, setSelectedTrack] = useState<number | null>(null);
   
   // Form State
   const [name, setName] = useState("");
@@ -65,7 +65,7 @@ export default function VolunteerSection() {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Join the Movement
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -125,7 +125,7 @@ export default function VolunteerSection() {
                       >
                         <div className="mt-6 pt-5 border-t border-charcoal/10 space-y-4">
                           <div>
-                            <h4 className="font-body font-bold text-xs text-accent uppercase tracking-wider mb-1">
+                            <h4 className="font-body font-bold text-xs text-accent-dark uppercase tracking-wider mb-1">
                               Requirements
                             </h4>
                             <p className="font-body text-sm text-charcoal/95 leading-relaxed">
@@ -133,7 +133,7 @@ export default function VolunteerSection() {
                             </p>
                           </div>
                           <div>
-                            <h4 className="font-body font-bold text-xs text-primary uppercase tracking-wider mb-1">
+                            <h4 className="font-body font-bold text-xs text-primary-dark uppercase tracking-wider mb-1">
                               Benefits & Growth
                             </h4>
                             <p className="font-body text-sm text-charcoal/95 leading-relaxed">
@@ -165,8 +165,9 @@ export default function VolunteerSection() {
                     >
                       {/* Full Name */}
                       <AnimatedSection variant="stagger-item">
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Full Name</label>
+                        <label htmlFor="fullName" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Full Name</label>
                         <input
+                          id="fullName"
                           type="text"
                           required
                           value={name}
@@ -179,8 +180,9 @@ export default function VolunteerSection() {
                       {/* Email & Phone */}
                       <AnimatedSection variant="stagger-item" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Email ID</label>
+                          <label htmlFor="emailId" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Email ID</label>
                           <input
+                            id="emailId"
                             type="email"
                             required
                             value={email}
@@ -190,8 +192,9 @@ export default function VolunteerSection() {
                           />
                         </div>
                         <div>
-                          <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Phone Number</label>
+                          <label htmlFor="phoneNumber" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Phone Number</label>
                           <input
+                            id="phoneNumber"
                             type="tel"
                             required
                             value={phone}
@@ -205,8 +208,9 @@ export default function VolunteerSection() {
                       {/* City & Age Group */}
                       <AnimatedSection variant="stagger-item" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">City</label>
+                          <label htmlFor="cityName" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">City</label>
                           <input
+                            id="cityName"
                             type="text"
                             required
                             value={city}
@@ -216,8 +220,9 @@ export default function VolunteerSection() {
                           />
                         </div>
                         <div>
-                          <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Age Group</label>
+                          <label htmlFor="ageGroup" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Age Group</label>
                           <select
+                            id="ageGroup"
                             value={ageGroup}
                             onChange={(e) => setAgeGroup(e.target.value)}
                             className="w-full px-4 py-2.5 rounded-xl border border-charcoal/10 bg-white focus:outline-none focus:border-primary text-charcoal"
@@ -247,7 +252,7 @@ export default function VolunteerSection() {
                                 }`}
                               >
                                 <span className="text-xs">{area}</span>
-                                {isChecked && <Check className="w-3.5 h-3.5 text-primary shrink-0" />}
+                                {isChecked && <Check className="w-3.5 h-3.5 text-primary-dark shrink-0" />}
                               </button>
                             );
                           })}
@@ -256,8 +261,9 @@ export default function VolunteerSection() {
 
                       {/* Message */}
                       <AnimatedSection variant="stagger-item">
-                        <label className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Why do you want to join?</label>
+                        <label htmlFor="motivationMessage" className="block font-semibold mb-1 text-xs uppercase tracking-wider text-charcoal/80">Why do you want to join?</label>
                         <textarea
+                          id="motivationMessage"
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
                           placeholder="Tell us a little bit about yourself..."
@@ -291,7 +297,7 @@ export default function VolunteerSection() {
                       Opening Your Email Client...
                     </h4>
                     <p className="font-body text-sm text-muted-grey leading-relaxed max-w-sm mb-6">
-                      If your email app didn't open automatically, please copy the text below and email it directly to <strong className="text-charcoal">skillarc.org@gmail.com</strong>:
+                      If your email app {"didn't"} open automatically, please copy the text below and email it directly to <strong className="text-charcoal">skillarc.org@gmail.com</strong>:
                     </p>
 
                     <div className="w-full text-left bg-white border border-charcoal/10 rounded-xl p-4 font-mono text-xs text-charcoal/90 overflow-x-auto whitespace-pre-wrap max-h-60 select-all">

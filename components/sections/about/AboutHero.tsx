@@ -39,7 +39,7 @@ export default function AboutHero() {
           {/* Eyebrow */}
           <motion.span
             variants={itemVariants}
-            className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-4 select-none"
+            className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-4 select-none"
           >
             About Us
           </motion.span>

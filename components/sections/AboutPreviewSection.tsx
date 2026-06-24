@@ -9,17 +9,19 @@ const MotionLink = motion.create(Link);
 
 export default function AboutPreviewSection() {
   return (
-    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
+    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-background-custom">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
         
         {/* Left Column: Stylized Quote & Mission Box */}
         <AnimatedSection
           variant="fade-right"
-          className="lg:col-span-5 h-full"
+          className="lg:col-span-5 h-auto lg:h-full order-2 lg:order-1"
         >
-          <div className="relative h-full flex flex-col justify-between p-10 md:p-12 rounded-3xl bg-primary/10 border border-primary/20 overflow-hidden shadow-sm">
-            {/* Background Blob */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-accent/20 blur-2xl" />
+          <div className="relative h-auto lg:h-full flex flex-col justify-between p-10 md:p-12 rounded-3xl bg-primary/10 border border-primary/20 shadow-sm">
+            {/* Background Blob clipped via a helper div */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-accent/20 blur-2xl" />
+            </div>
 
             {/* Stylized Huge Quote Mark */}
             <span className="absolute -top-12 -left-2 font-display text-[160px] md:text-[200px] text-primary/40 leading-none select-none">
@@ -27,7 +29,7 @@ export default function AboutPreviewSection() {
             </span>
 
             {/* Blockquote text */}
-            <blockquote className="font-display italic text-2xl md:text-3xl text-charcoal leading-relaxed relative z-10 pt-8 mb-16">
+            <blockquote className="font-display italic text-2xl md:text-3xl text-charcoal leading-relaxed relative z-10 pt-8 mb-8 lg:mb-16">
               Empowering the youth today {"isn't"} just about sharing knowledge; {"it's"} about igniting the spark of active community leadership.
             </blockquote>
 
@@ -44,9 +46,9 @@ export default function AboutPreviewSection() {
         {/* Right Column: Mission Content */}
         <AnimatedSection
           variant="fade-left"
-          className="lg:col-span-7 flex flex-col items-start"
+          className="lg:col-span-7 flex flex-col items-start order-1 lg:order-2"
         >
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3">
             Who We Are
           </span>
           
@@ -63,25 +65,28 @@ export default function AboutPreviewSection() {
             </p>
           </div>
 
-          {/* Mission highlight box (Pink) */}
-          <div className="w-full p-5 bg-accent/10 border-l-4 border-accent rounded-r-2xl flex gap-4 items-start mb-6">
-            <Sparkles className="w-5 h-5 text-accent shrink-0 mt-1" />
-            <div>
-              <h4 className="font-body font-bold text-sm text-charcoal mb-1">Our Mission</h4>
-              <p className="font-body text-sm text-charcoal/90 leading-relaxed">
-                Empowering young individuals with essential life skills to build confidence, leadership, and personal growth.
-              </p>
+          {/* Mission & Vision Responsive Grid/Flex container */}
+          <div className="flex flex-col md:flex-row gap-6 w-full mb-8">
+            {/* Mission highlight box (Pink) */}
+            <div className="flex-1 p-5 bg-accent/10 border-l-4 border-accent rounded-r-2xl flex gap-4 items-start">
+              <Sparkles className="w-5 h-5 text-accent-dark shrink-0 mt-1" />
+              <div>
+                <h3 className="font-body font-bold text-sm text-charcoal mb-1">Our Mission</h3>
+                <p className="font-body text-sm text-charcoal/90 leading-relaxed">
+                  Empowering young individuals with essential life skills to build confidence, leadership, and personal growth.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Vision statement */}
-          <div className="w-full p-5 bg-primary/10 border-l-4 border-primary rounded-r-2xl flex gap-4 items-start mb-8">
-            <Compass className="w-5 h-5 text-primary shrink-0 mt-1" />
-            <div>
-              <h4 className="font-body font-bold text-sm text-charcoal mb-1">Our Vision</h4>
-              <p className="font-body text-sm text-charcoal/90 leading-relaxed">
-                A generation that navigates {"life's"} challenges with courage and purpose.
-              </p>
+            {/* Vision statement */}
+            <div className="flex-1 p-5 bg-primary/10 border-l-4 border-primary rounded-r-2xl flex gap-4 items-start">
+              <Compass className="w-5 h-5 text-primary-dark shrink-0 mt-1" />
+              <div>
+                <h3 className="font-body font-bold text-sm text-charcoal mb-1">Our Vision</h3>
+                <p className="font-body text-sm text-charcoal/90 leading-relaxed">
+                  A generation that navigates {"life's"} challenges with courage and purpose.
+                </p>
+              </div>
             </div>
           </div>
 

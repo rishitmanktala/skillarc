@@ -15,7 +15,7 @@ const getSDGColor = (goal: string) => {
     case "SDG 10":
       return {
         strip: "bg-[#DD1367]", // UN SDG 10 Pink/Crimson
-        text: "text-[#DD1367]",
+        text: "text-[#CF0F5E]",
         bgLight: "bg-[#DD1367]/5",
       };
     case "SDG 17":
@@ -54,7 +54,7 @@ export default function SDGSection() {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Our Global Commitment
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -83,7 +83,7 @@ export default function SDGSection() {
                 
                 <div className="p-6 md:p-8 flex-grow flex flex-col items-start">
                   {/* Huge bold pastel blue target badge */}
-                  <span className="font-display font-black text-5xl md:text-6xl text-primary/45 mb-4 select-none">
+                  <span className="font-display font-black text-5xl md:text-6xl text-primary-dark/70 mb-4 select-none">
                     {goal.goal.split(" ")[1]}
                   </span>
 

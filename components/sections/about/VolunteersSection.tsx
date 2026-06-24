@@ -77,7 +77,7 @@ export default function VolunteersSection() {
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Our Ecosystem
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
@@ -98,9 +98,9 @@ export default function VolunteersSection() {
             
             // Map colors to matching styling classes
             const iconBgColor = 
-              person.color === "primary" ? "bg-primary/10 text-primary" : 
-              person.color === "accent" ? "bg-accent/10 text-accent" : 
-              "bg-highlight/10 text-highlight";
+              person.color === "primary" ? "bg-primary/10 text-primary-dark" : 
+              person.color === "accent" ? "bg-accent/10 text-accent-dark" : 
+              "bg-highlight/10 text-highlight-dark";
 
             const borderHoverColor = 
               person.color === "primary" ? "hover:border-primary/40" : 

@@ -57,8 +57,8 @@ export default function Navbar() {
               alt="SkillARC Logo Icon"
               className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="font-display font-bold text-2xl tracking-tight text-charcoal group-hover:text-primary transition-colors duration-300">
-              Skill<span className="text-primary group-hover:text-charcoal transition-colors duration-300">ARC</span>
+            <span className="font-display font-bold text-2xl tracking-tight text-charcoal group-hover:text-primary-dark transition-colors duration-300">
+              Skill<span className="text-primary-dark group-hover:text-charcoal transition-colors duration-300">ARC</span>
             </span>
           </Link>
 
@@ -95,10 +95,10 @@ export default function Navbar() {
           {/* Desktop CTA Button */}
           <div className="hidden lg:block">
             <Link
-              href="/get-involved"
+              href="/get-involved#donate"
               className="font-body font-semibold text-sm bg-accent text-charcoal px-6 py-2.5 rounded-full transition-all duration-200 hover:bg-accent/80 hover:scale-[1.02] shadow-sm hover:shadow-md active:scale-95"
             >
-              Get Involved
+              Donate
             </Link>
           </div>
 
@@ -158,11 +158,11 @@ export default function Navbar() {
               {/* Mobile CTA at the bottom */}
               <div className="mt-8 border-t border-primary/15 pt-6">
                 <Link
-                  href="/get-involved"
+                  href="/get-involved#donate"
                   onClick={() => setIsOpen(false)}
                   className="block text-center font-body font-semibold bg-accent text-charcoal py-3 px-6 rounded-full transition-all hover:bg-accent/80 shadow-sm active:scale-95"
                 >
-                  Get Involved
+                  Donate
                 </Link>
               </div>
             </motion.div>
