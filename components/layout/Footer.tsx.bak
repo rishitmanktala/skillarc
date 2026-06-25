@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Instagram, Linkedin, Twitter, Mail, Phone, MapPin, Heart } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -45,13 +44,11 @@ export default function Footer() {
           {/* Column 1: Logo & Mission */}
           <AnimatedSection variant="stagger-item" className="flex flex-col gap-5">
             <Link href="/" className="flex items-center gap-3 group w-fit">
-<Image
-  src="/logo-icon.png"
-  alt="SkillARC Logo Icon"
-  width={36}
-  height={36}
-  className="object-contain group-hover:scale-105 transition-transform duration-300"
-/>
+              <img
+                src="/logo-icon.png"
+                alt="SkillARC Logo Icon"
+                className="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-300"
+              />
               <span className="font-display font-bold text-xl tracking-tight text-charcoal group-hover:text-primary-dark transition-colors duration-300">
                 Skill<span className="text-primary-dark">ARC</span>
               </span>

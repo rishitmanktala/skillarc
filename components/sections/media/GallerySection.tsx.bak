@@ -266,13 +266,11 @@ export default function GallerySection() {
                 className="cursor-pointer w-full aspect-square rounded-2xl border border-[#2D2D2D]/5 shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] hover:shadow-[0_12px_30px_-6px_rgba(45,45,45,0.08)] transition-all duration-300 relative overflow-hidden group bg-charcoal"
               >
                 {/* Actual Image */}
-<Image
-  src={item.src}
-  alt={item.title}
-  width={400}
-  height={400}
-  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-75"
-/>
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-75"
+                />
 
                 {/* Sleek Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-5 flex flex-col justify-end text-left opacity-90 group-hover:opacity-100 transition-opacity duration-300">
@@ -328,13 +326,11 @@ export default function GallerySection() {
                 onClick={(e) => e.stopPropagation()}
                 className="max-w-2xl w-full aspect-[4/3] rounded-[2rem] bg-charcoal border border-white/10 flex flex-col justify-end overflow-hidden relative shadow-2xl"
               >
-<Image
-  src={item.src}
-  alt={item.title}
-  width={400}
-  height={400}
-  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-75"
-/>
+                <img
+                  src={items[lightboxIndex].src}
+                  alt={items[lightboxIndex].title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 
                 {/* Text overlay at bottom of lightbox */}
                 <div className="relative z-10 w-full bg-gradient-to-t from-black/95 via-black/50 to-transparent p-6 md:p-8 pt-20 text-left">

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { GraduationCap, BookOpen, Users } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -55,7 +54,7 @@ export default function HeroSection() {
           <AnimatedSection variant="stagger-item">
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.15] text-charcoal tracking-tight mb-6">
               Shaping Futures, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B9BB5] to-[#4A7FA8] ">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B9BB5] to-[#4A7FA8]">
                 One Skill
               </span>{" "}
               at a Time
@@ -147,13 +146,11 @@ export default function HeroSection() {
               animate={{ opacity: [0.5, 0.8, 0.5] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
-<Image
-  src="/images/hero-illustration.png"
-  alt="Youth Empowerment Illustration — SkillARC"
-  width={320}
-  height={320}
-  className="w-full h-full object-contain select-none"
-/>
+            <img
+              src="/images/hero-illustration.png"
+              alt="Youth Empowerment Illustration — SkillARC"
+              className="w-full h-full object-contain select-none"
+            />
           </div>
         </AnimatedSection>
 

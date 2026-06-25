@@ -75,8 +75,6 @@ export default function InstagramSection() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary to-accent rounded-full p-[2.5px] -m-[2.5px] animate-pulse" />
                   <Image
                     src="/logo-icon.png"
-                    width={48}
-                    height={48}
                     alt="SkillARC Logo"
                     className="w-12 h-12 rounded-full border border-white bg-white object-contain"
                   />
@@ -131,8 +129,6 @@ export default function InstagramSection() {
                   <Image
                     src={post.src}
                     alt={post.alt}
-                    width={400}
-                    height={400}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
