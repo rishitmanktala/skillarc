@@ -329,8 +329,8 @@ export default function GallerySection() {
                 className="max-w-2xl w-full aspect-[4/3] rounded-[2rem] bg-charcoal border border-white/10 flex flex-col justify-end overflow-hidden relative shadow-2xl"
               >
 <Image
-  src={item.src}
-  alt={item.title}
+  src={items[lightboxIndex].src}
+  alt={items[lightboxIndex].title}
   width={400}
   height={400}
   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-75"
