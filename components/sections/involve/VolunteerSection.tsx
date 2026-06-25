@@ -60,7 +60,7 @@ export default function VolunteerSection() {
   };
 
   return (
-    <section id="volunteer" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden scroll-mt-20">
+    <section id="volunteer" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgYellow overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Heading */}
@@ -90,7 +90,7 @@ export default function VolunteerSection() {
                   className={`cursor-pointer border rounded-2xl p-6 transition-all duration-300 ${
                     isSelected
                       ? "border-primary bg-primary/5 shadow-sm"
-                      : "border-charcoal/5 bg-background-custom hover:border-primary/40 hover:bg-white"
+                      : "border-charcoal/5 bg-bgGreen hover:border-primary/40 hover:bg-white"
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -319,7 +319,7 @@ export default function VolunteerSection() {
                           `Subject: [SkillARC] Volunteer Application - ${name}\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city || "N/A"}\nAge Group: ${ageGroup}\nInterest Areas: ${interests.join(", ") || "None selected"}\n\nWhy do you want to join?:\n${message || "N/A"}`
                         );
                       }}
-                      className="mt-6 font-body font-semibold text-xs bg-charcoal text-white hover:bg-charcoal/80 px-4 py-2.5 rounded-xl transition-colors cursor-pointer"
+                      className="mt-6 font-body font-semibold text-xs bg-accent text-charcoal hover:bg-accent/80 px-4 py-2.5 rounded-xl transition-colors cursor-pointer"
                     >
                       Copy Application Details
                     </button>

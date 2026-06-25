@@ -38,7 +38,7 @@ export default function InstagramSection() {
   const instagramUrl = "https://www.instagram.com/skillarc_?igsh=b2ZodjQ3Ymt3dXoz&utm_source=qr";
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white border-t border-charcoal/5 relative overflow-hidden">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgCoral border-t border-charcoal/5 relative overflow-hidden">
       {/* Decorative background blur blobs */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 rounded-full bg-accent/5 blur-3xl -z-10" />
       <div className="absolute bottom-0 right-10 w-96 h-96 rounded-full bg-primary/5 blur-3xl -z-10" />
@@ -66,7 +66,7 @@ export default function InstagramSection() {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -4, boxShadow: "0 12px 30px -10px rgba(45, 45, 45, 0.12)" }}
-              className="w-full flex items-center justify-between p-5 rounded-2xl bg-background-custom border border-charcoal/5 mb-8 transition-shadow duration-300 group cursor-pointer"
+              className="w-full flex items-center justify-between p-5 rounded-2xl bg-bgGreen border border-charcoal/5 mb-8 transition-shadow duration-300 group cursor-pointer"
             >
               <div className="flex items-center gap-4">
                 {/* Profile Picture */}

@@ -64,7 +64,7 @@ const DETAILED_PROGRAMS = [
 
 export default function ProgramsGrid() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgYellow overflow-hidden">
       <div className="max-w-7xl mx-auto w-full space-y-20 lg:space-y-28">
         {DETAILED_PROGRAMS.map((program, index) => {
           const isEven = index % 2 === 0;
@@ -115,7 +115,7 @@ export default function ProgramsGrid() {
               </div>
 
               {/* Text Content Side */}
-              <div className="w-full lg:w-1/2 flex flex-col items-start">
+              <div className="w-full lg:w-1/2 flex flex-col items-start bg-white/65 rounded-2xl border border-white/70 p-6 md:p-8 shadow-[0_8px_24px_-14px_rgba(55,108,122,0.28)]">
                 
                 {/* Header Row: Badge & Target */}
                 <div className="flex items-center gap-4 mb-5">

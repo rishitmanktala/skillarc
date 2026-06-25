@@ -9,7 +9,7 @@ const MotionLink = motion.create(Link);
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-70px)] py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex items-center overflow-hidden bg-background-custom">
+    <section className="relative min-h-[calc(100vh-70px)] py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex items-center overflow-hidden bg-bgPink">
       {/* Background blur blobs with gentle float animations */}
       <motion.div
         animate={{
@@ -21,7 +21,7 @@ export default function HeroSection() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-10 right-10 w-[300px] h-[300px] rounded-full bg-primary/20 blur-3xl -z-10"
+        className="absolute top-10 right-10 w-[300px] h-[300px] rounded-full bg-bgPurple/70 blur-3xl -z-10"
       />
       <motion.div
         animate={{
@@ -33,11 +33,11 @@ export default function HeroSection() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-10 left-10 w-[400px] h-[400px] rounded-full bg-accent/15 blur-3xl -z-10"
+        className="absolute bottom-10 left-10 w-[400px] h-[400px] rounded-full bg-bgGreen/80 blur-3xl -z-10"
       />
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
+
         {/* Left Half: Text Content */}
         <AnimatedSection
           variant="stagger-container"
@@ -54,7 +54,7 @@ export default function HeroSection() {
           <AnimatedSection variant="stagger-item">
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.15] text-charcoal tracking-tight mb-6">
               Shaping Futures, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#89c5d7] to-accent">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B9BB5] to-[#4A7FA8]">
                 One Skill
               </span>{" "}
               at a Time
@@ -75,7 +75,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 20px -3px rgba(168,213,226,0.4)" }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="w-full sm:w-auto text-center font-body font-semibold text-sm bg-primary text-charcoal px-6 py-3 rounded-xl shadow-sm hover:bg-primary/80 transition-colors"
+              className="w-full sm:w-auto text-center font-body font-semibold text-sm bg-[linear-gradient(135deg,#A8D5E2,#EDE8F5)] text-charcoal px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all"
             >
               Get Involved
             </MotionLink>
@@ -84,7 +84,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 20px -3px rgba(45,45,45,0.15)" }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              className="w-full sm:w-auto text-center font-body font-semibold text-sm border-2 border-charcoal text-charcoal px-6 py-3 rounded-xl hover:bg-charcoal hover:text-background-custom transition-colors"
+              className="w-full sm:w-auto text-center font-body font-semibold text-sm border-2 border-accent/50 bg-white/55 text-charcoal px-6 py-3 rounded-xl hover:bg-bgCoral hover:border-accent transition-colors"
             >
               Explore Programs
             </MotionLink>
@@ -92,7 +92,7 @@ export default function HeroSection() {
 
           {/* Mini Impact Stats */}
           <AnimatedSection variant="stagger-item" className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-6 border-t border-primary/20 pt-8 w-full text-center sm:text-left">
-            <MotionLink 
+            <MotionLink
               href="/about"
               whileHover={{ y: -4, scale: 1.03 }}
               className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 cursor-pointer select-none text-center sm:text-left"
@@ -105,7 +105,7 @@ export default function HeroSection() {
               </span>
             </MotionLink>
             <div className="h-4 w-px bg-primary/25 hidden sm:block" />
-            <MotionLink 
+            <MotionLink
               href="/our-work"
               whileHover={{ y: -4, scale: 1.03 }}
               className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 cursor-pointer select-none text-center sm:text-left"
@@ -118,7 +118,7 @@ export default function HeroSection() {
               </span>
             </MotionLink>
             <div className="h-4 w-px bg-primary/25 hidden sm:block" />
-            <MotionLink 
+            <MotionLink
               href="/about#collaborations"
               whileHover={{ y: -4, scale: 1.03 }}
               className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2.5 cursor-pointer select-none text-center sm:text-left"
@@ -139,9 +139,9 @@ export default function HeroSection() {
           delay={0.25}
           className="lg:col-span-5 w-full flex items-center justify-center relative min-h-[300px] lg:min-h-[500px] mt-8 lg:mt-0"
         >
-          <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] aspect-square rounded-3xl overflow-hidden shadow-xl border border-primary/20 bg-background-custom flex items-center justify-center p-6 sm:p-8">
+          <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[480px] aspect-square rounded-3xl overflow-hidden shadow-xl border border-white/70 bg-white/55 flex items-center justify-center p-6 sm:p-8">
             {/* Ambient pulsing background glow */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-accent/20 -z-10"
               animate={{ opacity: [0.5, 0.8, 0.5] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -153,7 +153,7 @@ export default function HeroSection() {
             />
           </div>
         </AnimatedSection>
-        
+
       </div>
     </section>
   );

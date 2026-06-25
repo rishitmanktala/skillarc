@@ -12,6 +12,12 @@ const config: Config = {
         primary: "#A8D5E2",     // Pastel Blue
         accent: "#F2B5C4",      // Pastel Pink
         background: "#FDF6F0",  // Warm Beige
+        bgBlue: "#E8F4F8",
+        bgPink: "#FDE8EE",
+        bgYellow: "#FEF6DC",
+        bgGreen: "#E8F5EE",
+        bgPurple: "#EDE8F5",
+        bgCoral: "#FDE8E4",
         card: "#FFFFFF",        // Soft White
         highlight: "#E8C97A",   // Gold Accent
         charcoal: "#2D2D2D",    // Deep Charcoal

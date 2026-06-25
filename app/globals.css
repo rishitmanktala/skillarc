@@ -7,6 +7,12 @@
   --color-accent: #F2B5C4;
   --color-accent-dark: #9E3D52;
   --color-background-custom: #FDF6F0;
+  --color-bgBlue: #E8F4F8;
+  --color-bgPink: #FDE8EE;
+  --color-bgYellow: #FEF6DC;
+  --color-bgGreen: #E8F5EE;
+  --color-bgPurple: #EDE8F5;
+  --color-bgCoral: #FDE8E4;
   --color-card-custom: #FFFFFF;
   --color-highlight: #E8C97A;
   --color-highlight-dark: #9B7524;
@@ -33,6 +39,12 @@
   --accent: #F2B5C4;
   --accent-dark: #9E3D52;
   --background: #FDF6F0;
+  --bg-blue: #E8F4F8;
+  --bg-pink: #FDE8EE;
+  --bg-yellow: #FEF6DC;
+  --bg-green: #E8F5EE;
+  --bg-purple: #EDE8F5;
+  --bg-coral: #FDE8E4;
   --card: #FFFFFF;
   --highlight: #E8C97A;
   --highlight-dark: #9B7524;
@@ -45,7 +57,10 @@ html {
 }
 
 body {
-  background-color: var(--background);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(168, 213, 226, 0.28), transparent 28rem),
+    radial-gradient(circle at 92% 18%, rgba(242, 181, 196, 0.2), transparent 26rem),
+    linear-gradient(180deg, var(--bg-pink) 0%, var(--background) 34%, var(--bg-blue) 100%);
   color: var(--charcoal);
   font-family: var(--font-body), 'DM Sans', sans-serif;
   position: relative;
@@ -127,11 +142,13 @@ body::before {
 
 /* ── Card Token A: Standard UI Surface ── */
 .card-surface {
-  background-color: #FFFFFF;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78)),
+    linear-gradient(135deg, rgba(168, 213, 226, 0.16), rgba(242, 181, 196, 0.14));
   border-radius: 1rem;
-  border: 1px solid rgba(45, 45, 45, 0.05);
+  border: 1px solid rgba(55, 108, 122, 0.13);
   padding: 1.5rem;
-  box-shadow: 0 4px 20px -4px rgba(45, 45, 45, 0.03);
+  box-shadow: 0 8px 26px -12px rgba(55, 108, 122, 0.28);
   transition: all 300ms ease;
 }
 @media (min-width: 768px) {
@@ -141,7 +158,8 @@ body::before {
 }
 .card-surface:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px -6px rgba(45, 45, 45, 0.08);
+  border-color: rgba(158, 61, 82, 0.18);
+  box-shadow: 0 18px 34px -14px rgba(158, 61, 82, 0.25);
 }
 
 /* ── Card Token B: Glassmorphic Surface ── */
@@ -166,15 +184,19 @@ body::before {
 
 /* ── Card Token C: Interactive Tile ── */
 .card-tile {
-  background-color: #FFFBF8;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(253, 232, 238, 0.58)),
+    var(--bg-yellow);
   border-radius: 0.75rem;
-  border: 1px dashed rgba(45, 45, 45, 0.1);
+  border: 1px dashed rgba(158, 61, 82, 0.2);
   padding: 1rem;
   transition: all 200ms ease;
 }
 .card-tile:hover {
-  border-color: #A8D5E2;
-  background-color: #FFFFFF;
+  border-color: #F2B5C4;
+  background:
+    linear-gradient(135deg, rgba(232, 244, 248, 0.72), rgba(253, 232, 228, 0.8)),
+    #FFFFFF;
 }
 
 /* ── Button Tokens ── */
@@ -198,21 +220,21 @@ body::before {
 }
 
 .btn-primary {
-  background-color: #A8D5E2;
+  background: linear-gradient(135deg, #A8D5E2, #EDE8F5);
   color: #2D2D2D;
-  box-shadow: 0 1px 3px rgba(45, 45, 45, 0.06);
+  box-shadow: 0 10px 22px -14px rgba(55, 108, 122, 0.65);
 }
 .btn-primary:hover {
-  background-color: rgba(168, 213, 226, 0.8);
+  background: linear-gradient(135deg, #91cbdc, #FDE8EE);
 }
 
 .btn-accent {
-  background-color: #F2B5C4;
+  background: linear-gradient(135deg, #F2B5C4, #FEF6DC);
   color: #2D2D2D;
-  box-shadow: 0 1px 3px rgba(45, 45, 45, 0.06);
+  box-shadow: 0 10px 22px -14px rgba(158, 61, 82, 0.55);
 }
 .btn-accent:hover {
-  background-color: rgba(242, 181, 196, 0.8);
+  background: linear-gradient(135deg, #ebb0c0, #E8F5EE);
 }
 
 .btn-outlined {

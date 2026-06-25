@@ -132,7 +132,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0.1, duration: 0.4 }}
-              className="fixed right-0 top-0 bottom-0 w-[280px] max-w-[85vw] bg-background-custom shadow-xl border-l border-primary/20 p-6 pt-24 z-40 lg:hidden flex flex-col justify-between"
+              className="fixed right-0 top-0 bottom-0 w-[280px] max-w-[85vw] bg-bgBlue shadow-xl border-l border-primary/20 p-6 pt-24 z-40 lg:hidden flex flex-col justify-between"
             >
               <div className="flex flex-col gap-6">
                 {NAV_LINKS.map((link) => {

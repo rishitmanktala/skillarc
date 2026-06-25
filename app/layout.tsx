@@ -41,7 +41,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background-custom text-charcoal">
+      <body className="min-h-full flex flex-col bg-bgPink text-charcoal">
         <Loader />
         <Navbar />
         <main className="flex-grow flex flex-col">

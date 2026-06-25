@@ -38,7 +38,7 @@ export default function VideosSection() {
   }, [activeVideoUrl]);
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background-custom overflow-hidden">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgPink overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Heading */}

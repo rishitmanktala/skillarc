@@ -38,7 +38,7 @@ export default function StoriesSection() {
   };
 
   return (
-    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-charcoal text-white overflow-hidden">
+    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgPurple text-charcoal overflow-hidden">
       {/* Scattered Pastel Dots Pattern Background */}
       <div 
         className="absolute inset-0 opacity-15 pointer-events-none"
@@ -56,10 +56,10 @@ export default function StoriesSection() {
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent bg-accent/10 px-3.5 py-1.5 rounded-full mb-3 select-none">
+          <span className="inline-flex items-center font-body text-xs md:text-sm font-semibold tracking-wider uppercase text-accent-dark bg-accent/15 px-3.5 py-1.5 rounded-full mb-3 select-none">
             Stories in Motion
           </span>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
             Real People, Real Change
           </h2>
         </div>
@@ -81,24 +81,24 @@ export default function StoriesSection() {
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-white/[0.06] backdrop-blur-md border border-white/10 relative group transition-all duration-300 h-full cursor-pointer hover:bg-white/[0.1]"
+                className="flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-white/75 backdrop-blur-md border border-white/80 relative group transition-all duration-300 h-full cursor-pointer hover:bg-bgPink/80"
               >
                 <div>
                   <span className="font-display text-primary text-[80px] absolute -top-1 -left-2 select-none leading-none opacity-40">
                     “
                   </span>
-                  <p className="font-body text-base md:text-lg text-gray-200 leading-relaxed relative z-10 pt-4 mb-8">
+                  <p className="font-body text-base md:text-lg text-charcoal/85 leading-relaxed relative z-10 pt-4 mb-8">
                     {story.quote}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-4 border-t border-white/10 pt-5 mt-auto">
+                <div className="flex items-center gap-4 border-t border-accent/20 pt-5 mt-auto">
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-accent text-charcoal font-body font-bold text-sm">
                     {story.initials}
                   </div>
                   <div>
-                    <h3 className="font-body font-bold text-sm text-white">{story.author}</h3>
-                    <p className="font-body text-xs text-gray-400">{story.role}</p>
+                    <h3 className="font-body font-bold text-sm text-charcoal">{story.author}</h3>
+                    <p className="font-body text-xs text-muted-grey">{story.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -116,26 +116,26 @@ export default function StoriesSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="w-full flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-white/[0.06] backdrop-blur-md border border-white/10 relative hover:bg-white/[0.1] transition-all duration-300"
+                className="w-full flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-white/75 backdrop-blur-md border border-white/80 relative hover:bg-bgPink/80 transition-all duration-300"
               >
                 <div>
                   <span className="font-display text-primary text-[80px] absolute -top-1 -left-2 select-none leading-none opacity-40">
                     “
                   </span>
-                  <p className="font-body text-base md:text-lg text-gray-200 leading-relaxed relative z-10 pt-4 mb-8">
+                  <p className="font-body text-base md:text-lg text-charcoal/85 leading-relaxed relative z-10 pt-4 mb-8">
                     {STORIES[activeIndex].quote}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-4 border-t border-white/10 pt-5">
+                <div className="flex items-center gap-4 border-t border-accent/20 pt-5">
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-accent text-charcoal font-body font-bold text-sm">
                     {STORIES[activeIndex].initials}
                   </div>
                   <div>
-                    <h3 className="font-body font-bold text-sm text-white">
+                    <h3 className="font-body font-bold text-sm text-charcoal">
                       {STORIES[activeIndex].author}
                     </h3>
-                    <p className="font-body text-xs text-gray-400">
+                    <p className="font-body text-xs text-muted-grey">
                       {STORIES[activeIndex].role}
                     </p>
                   </div>
@@ -150,19 +150,19 @@ export default function StoriesSection() {
               onClick={handlePrev}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="p-3 rounded-full border border-white/20 hover:border-white/50 text-white transition-colors focus:outline-none cursor-pointer"
+              className="p-3 rounded-full border border-accent/30 hover:border-accent text-charcoal bg-white/60 transition-colors focus:outline-none cursor-pointer"
               aria-label="Previous story"
             >
               <ArrowLeft className="w-5 h-5" />
             </motion.button>
-            <span className="font-body text-xs text-gray-400 select-none">
+            <span className="font-body text-xs text-muted-grey select-none">
               {activeIndex + 1} / {STORIES.length}
             </span>
             <motion.button
               onClick={handleNext}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="p-3 rounded-full border border-white/20 hover:border-white/50 text-white transition-colors focus:outline-none cursor-pointer"
+              className="p-3 rounded-full border border-accent/30 hover:border-accent text-charcoal bg-white/60 transition-colors focus:outline-none cursor-pointer"
               aria-label="Next story"
             >
               <ArrowRight className="w-5 h-5" />

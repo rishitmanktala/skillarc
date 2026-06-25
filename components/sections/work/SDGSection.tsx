@@ -49,7 +49,7 @@ export default function SDGSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgGreen overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Heading */}
@@ -76,7 +76,7 @@ export default function SDGSection() {
                 viewport={{ once: true, margin: "-50px" }}
                 variants={cardVariants}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="flex flex-col bg-white border border-[#2D2D2D]/5 rounded-2xl shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] hover:shadow-[0_12px_30px_-6px_rgba(45,45,45,0.08)] transition-all duration-300 overflow-hidden relative"
+                className="flex flex-col bg-white/85 border border-white/70 rounded-2xl shadow-[0_8px_24px_-12px_rgba(55,108,122,0.26)] hover:shadow-[0_14px_30px_-14px_rgba(158,61,82,0.22)] transition-all duration-300 overflow-hidden relative"
               >
                 {/* Official SDG Color Strip */}
                 <div className={`h-[8px] w-full ${colors.strip}`} />

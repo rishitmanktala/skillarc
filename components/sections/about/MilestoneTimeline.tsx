@@ -82,7 +82,7 @@ export default function MilestoneTimeline() {
   const isSpineInView = useInView(spineRef, { once: true, amount: 0.1 });
 
   return (
-    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background-custom overflow-hidden">
+    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgGreen overflow-hidden">
       <div className="max-w-5xl mx-auto w-full">
         
         {/* Section Heading */}

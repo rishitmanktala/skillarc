@@ -72,7 +72,7 @@ export default function InternshipSection() {
   };
 
   return (
-    <section id="intern" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background-custom overflow-hidden scroll-mt-20">
+    <section id="intern" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgPink overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Heading */}
@@ -310,7 +310,7 @@ export default function InternshipSection() {
                         `Subject: [SkillARC] Internship Application - ${selectedRole} - ${name}\n\nRole: ${selectedRole}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city || "N/A"}\nAge Group: ${ageGroup}\n\nStatement of Purpose / Why are you a good fit?:\n${message || "N/A"}`
                       );
                     }}
-                    className="mt-6 font-body font-semibold text-xs bg-charcoal text-white hover:bg-charcoal/80 px-4 py-2.5 rounded-xl transition-colors cursor-pointer"
+                    className="mt-6 font-body font-semibold text-xs bg-accent text-charcoal hover:bg-accent/80 px-4 py-2.5 rounded-xl transition-colors cursor-pointer"
                   >
                     Copy Application Details
                   </button>

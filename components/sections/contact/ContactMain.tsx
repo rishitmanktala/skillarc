@@ -46,12 +46,12 @@ export default function ContactMain() {
   };
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgBlue overflow-hidden">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         
         {/* LEFT COLUMN — Contact Information */}
         <div className="lg:col-span-5 w-full">
-          <div className="bg-primary/10 rounded-2xl p-6 md:p-8 border border-primary/20 space-y-8 flex flex-col justify-between">
+          <div className="bg-bgGreen rounded-2xl p-6 md:p-8 border border-primary/20 space-y-8 flex flex-col justify-between">
             
             <div>
               <h2 className="font-display font-bold text-xl md:text-2xl text-charcoal mb-2">
@@ -155,7 +155,7 @@ export default function ContactMain() {
 
         {/* RIGHT COLUMN — Contact Form */}
         <div className="lg:col-span-7 w-full">
-          <div className="bg-[#FCFAF7] border border-[#2D2D2D]/5 rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] relative overflow-hidden">
+          <div className="bg-bgPink border border-white/70 rounded-2xl p-6 md:p-8 shadow-[0_8px_24px_-12px_rgba(158,61,82,0.22)] relative overflow-hidden">
             
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
@@ -326,7 +326,7 @@ export default function ContactMain() {
                         `Subject: [SkillARC] Contact Request - ${purpose}\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nPurpose: ${purpose}\n\nMessage:\n${message}`
                       );
                     }}
-                    className="mt-6 font-body font-semibold text-xs bg-charcoal text-white hover:bg-charcoal/80 px-4 py-2.5 rounded-xl transition-colors cursor-pointer"
+                    className="mt-6 font-body font-semibold text-xs bg-accent text-charcoal hover:bg-accent/80 px-4 py-2.5 rounded-xl transition-colors cursor-pointer"
                   >
                     Copy Message Details
                   </button>

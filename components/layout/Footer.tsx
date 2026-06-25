@@ -5,7 +5,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-charcoal text-white pt-0 overflow-hidden">
+    <footer className="relative w-full bg-bgBlue text-charcoal pt-0 overflow-hidden">
       {/* Decorative Wave SVG Top Border */}
       <div className="w-full overflow-hidden leading-[0] bg-transparent">
         <svg
@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Main foreground wave matching footer background */}
           <path
             d="M0,45 C300,85 600,25 900,75 L1200,45 L1200,120 L0,120 Z"
-            fill="#2D2D2D"
+            fill="#E8F4F8"
           />
         </svg>
       </div>
@@ -49,8 +49,8 @@ export default function Footer() {
                 alt="SkillARC Logo Icon"
                 className="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-300"
               />
-              <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-primary transition-colors duration-300">
-                Skill<span className="text-primary">ARC</span>
+              <span className="font-display font-bold text-xl tracking-tight text-charcoal group-hover:text-primary-dark transition-colors duration-300">
+                Skill<span className="text-primary-dark">ARC</span>
               </span>
             </Link>
             
@@ -58,7 +58,7 @@ export default function Footer() {
               Achieving Real Change
             </p>
             
-            <p className="font-body text-sm text-gray-300 leading-relaxed max-w-xs">
+            <p className="font-body text-sm text-muted-grey leading-relaxed max-w-xs">
               SkillARC is a youth-led organization empowering adolescents through critical life skills, digital literacy, and leadership training.
             </p>
 
@@ -96,7 +96,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <AnimatedSection variant="stagger-item" className="flex flex-col gap-4">
-            <h3 className="font-display font-bold text-lg text-primary tracking-wide">
+            <h3 className="font-display font-bold text-lg text-primary-dark tracking-wide">
               Quick Links
             </h3>
             <ul className="flex flex-col gap-2.5">
@@ -104,7 +104,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-gray-300 hover:text-accent hover:pl-1 transition-all duration-300"
+                    className="font-body text-sm text-muted-grey hover:text-accent-dark hover:pl-1 transition-all duration-300"
                   >
                     {link.label}
                   </Link>
@@ -115,14 +115,14 @@ export default function Footer() {
 
           {/* Column 3: Get Involved */}
           <AnimatedSection variant="stagger-item" className="flex flex-col gap-4">
-            <h3 className="font-display font-bold text-lg text-primary tracking-wide">
+            <h3 className="font-display font-bold text-lg text-primary-dark tracking-wide">
               Get Involved
             </h3>
             <ul className="flex flex-col gap-2.5">
               <li>
                 <Link
                   href="/get-involved#volunteer"
-                  className="font-body text-sm text-gray-300 hover:text-accent hover:pl-1 transition-all duration-300"
+                  className="font-body text-sm text-muted-grey hover:text-accent-dark hover:pl-1 transition-all duration-300"
                 >
                   Volunteer with Us
                 </Link>
@@ -130,7 +130,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/get-involved#intern"
-                  className="font-body text-sm text-gray-300 hover:text-accent hover:pl-1 transition-all duration-300"
+                  className="font-body text-sm text-muted-grey hover:text-accent-dark hover:pl-1 transition-all duration-300"
                 >
                   Apply for Internships
                 </Link>
@@ -138,7 +138,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/get-involved#partner"
-                  className="font-body text-sm text-gray-300 hover:text-accent hover:pl-1 transition-all duration-300"
+                  className="font-body text-sm text-muted-grey hover:text-accent-dark hover:pl-1 transition-all duration-300"
                 >
                   Partner as an Institution
                 </Link>
@@ -146,7 +146,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/get-involved#donate"
-                  className="font-body text-sm text-gray-300 hover:text-accent hover:pl-1 transition-all duration-300"
+                  className="font-body text-sm text-muted-grey hover:text-accent-dark hover:pl-1 transition-all duration-300"
                 >
                   Support & Donate
                 </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
 
           {/* Column 4: Contact Us */}
           <AnimatedSection variant="stagger-item" className="flex flex-col gap-4">
-            <h3 className="font-display font-bold text-lg text-primary tracking-wide">
+            <h3 className="font-display font-bold text-lg text-primary-dark tracking-wide">
               Contact Us
             </h3>
             <ul className="flex flex-col gap-3">
@@ -164,20 +164,20 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <a
                   href="mailto:skillarc.org@gmail.com"
-                  className="font-body text-sm text-gray-300 hover:text-accent transition-colors break-all"
+                  className="font-body text-sm text-muted-grey hover:text-accent-dark transition-colors break-all"
                 >
                   skillarc.org@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="font-body text-sm text-gray-300">
+                <span className="font-body text-sm text-muted-grey">
                   +91 70422 20997
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="font-body text-sm text-gray-300 leading-normal">
+                <span className="font-body text-sm text-muted-grey leading-normal">
                   Gurugram, India
                 </span>
               </li>
@@ -190,12 +190,12 @@ export default function Footer() {
         <AnimatedSection
           variant="fade-in"
           delay={0.3}
-          className="border-t border-gray-700/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="border-t border-primary/20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <p className="font-body text-xs text-gray-400 text-center sm:text-left">
+          <p className="font-body text-xs text-muted-grey text-center sm:text-left">
             &copy; 2026 SkillARC Foundation. All rights reserved.
           </p>
-          <p className="font-body text-xs text-gray-400 flex items-center justify-center gap-1.5">
+          <p className="font-body text-xs text-muted-grey flex items-center justify-center gap-1.5">
             Designed with <Heart className="w-3.5 h-3.5 text-accent fill-accent animate-pulse" /> for Youth Empowerment
           </p>
         </AnimatedSection>
@@ -203,4 +203,3 @@ export default function Footer() {
     </footer>
   );
 }
-

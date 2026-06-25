@@ -33,7 +33,7 @@ export default function PartnerSection() {
   };
 
   return (
-    <section id="partner" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden scroll-mt-20">
+    <section id="partner" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgBlue overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Main Grid Layout */}
@@ -66,7 +66,7 @@ export default function PartnerSection() {
 
           {/* Right: Inquiry Form */}
           <div className="lg:col-span-6 w-full">
-            <div className="bg-[#FCFAF7] border border-[#2D2D2D]/5 rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)]">
+            <div className="bg-bgPurple border border-white/70 rounded-2xl p-6 md:p-8 shadow-[0_8px_24px_-12px_rgba(55,108,122,0.24)]">
               <h3 className="font-display font-bold text-xl text-charcoal mb-6">
                 Partnership Inquiry
               </h3>
@@ -209,7 +209,7 @@ export default function PartnerSection() {
                           `Subject: [SkillARC] Partnership Inquiry - ${orgName}\n\nOrganisation Name: ${orgName}\nContact Person: ${contactName}\nEmail: ${email}\nPhone: ${phone}\nOrganisation Type: ${orgType}\n\nCollaboration Details / Proposed scope:\n${message || "N/A"}`
                         );
                       }}
-                      className="mt-6 font-body font-semibold text-xs bg-charcoal text-white hover:bg-charcoal/80 px-4 py-2.5 rounded-xl transition-colors cursor-pointer"
+                      className="mt-6 font-body font-semibold text-xs bg-accent text-charcoal hover:bg-accent/80 px-4 py-2.5 rounded-xl transition-colors cursor-pointer"
                     >
                       Copy Inquiry Details
                     </button>

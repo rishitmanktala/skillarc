@@ -37,7 +37,7 @@ const RECOGNITIONS = [
 
 export default function RecognitionsSection() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background-custom border-t border-primary/10">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgPurple border-t border-primary/10">
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -102,4 +102,3 @@ export default function RecognitionsSection() {
     </section>
   );
 }
-

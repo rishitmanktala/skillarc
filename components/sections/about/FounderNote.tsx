@@ -14,7 +14,7 @@ export default function FounderNote() {
   };
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgPink overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16 select-none">
@@ -58,7 +58,7 @@ export default function FounderNote() {
 
           {/* Right Column: Handwritten Letter Card */}
           <div className="lg:col-span-8">
-            <div className="bg-[#FCFAF7] border border-[#2D2D2D]/5 rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] relative overflow-hidden">
+            <div className="bg-white/75 border border-white/70 rounded-2xl p-6 md:p-8 shadow-[0_8px_24px_-12px_rgba(158,61,82,0.2)] relative overflow-hidden">
               {/* Top Accent Blob */}
               <div className="absolute top-0 right-0 w-24 h-24 rounded-bl-full bg-primary/20 -z-0" />
               

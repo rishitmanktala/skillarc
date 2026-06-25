@@ -24,7 +24,7 @@ const getProgramIcon = (index: number) => {
 
 export default function ProgramsSection() {
   return (
-    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgGreen overflow-hidden">
       {/* Decorative Blur Blob */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl -z-10" />
 
@@ -58,10 +58,10 @@ export default function ProgramsSection() {
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex flex-col bg-white rounded-2xl border border-[#2D2D2D]/5 shadow-[0_4px_20px_-4px_rgba(45,45,45,0.03)] transition-all duration-300 overflow-hidden group h-full cursor-pointer"
+                className="flex flex-col bg-white/85 rounded-2xl border border-white/70 shadow-[0_8px_24px_-12px_rgba(55,108,122,0.28)] transition-all duration-300 overflow-hidden group h-full cursor-pointer"
               >
                 {/* Pastel Gradient Top Bar */}
-                <div className="h-[6px] w-full bg-gradient-to-r from-primary to-accent" />
+                <div className={`h-[7px] w-full ${index === 0 ? 'bg-gradient-to-r from-primary to-bgPurple' : index === 1 ? 'bg-gradient-to-r from-accent to-bgYellow' : index === 2 ? 'bg-gradient-to-r from-highlight to-bgGreen' : 'bg-gradient-to-r from-bgCoral to-primary'}`} />
                 
                 {/* Card Contents */}
                 <div className="p-6 md:p-8 flex flex-col items-start flex-grow">
