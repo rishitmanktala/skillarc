@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import Image from "next/image";
 
 const DETAILED_PROGRAMS = [
   {
@@ -97,11 +98,14 @@ export default function ProgramsGrid() {
                   className={`w-full aspect-[4/3] rounded-2xl bg-gradient-to-tr ${program.gradient} border border-[#2D2D2D]/5 flex items-center justify-center relative overflow-hidden shadow-sm hover:scale-[1.01] transition-transform duration-500 select-none`}
                 >
                   {program.image ? (
-                    <img
-                      src={program.image}
-                      alt={program.title}
-                      className="w-full h-full object-cover"
-                    />
+                    <div className="absolute inset-0">
+                      <Image
+                        src={program.image}
+                        alt={program.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   ) : (
                     <>
                       <span className="font-display font-bold text-lg text-charcoal/30">

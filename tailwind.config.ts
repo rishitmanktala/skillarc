@@ -10,7 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#A8D5E2",     // Pastel Blue
+        "primary-dark": "#5E9DB0",
         accent: "#F2B5C4",      // Pastel Pink
+        "accent-dark": "#C57A8E",
         background: "#FDF6F0",  // Warm Beige
         bgBlue: "#E8F4F8",
         bgPink: "#FDE8EE",
@@ -21,7 +23,8 @@ const config: Config = {
         card: "#FFFFFF",        // Soft White
         highlight: "#E8C97A",   // Gold Accent
         charcoal: "#2D2D2D",    // Deep Charcoal
-        mutedGrey: "#7A7A7A",   // Muted Grey
+        "muted-grey": "#7A7A7A",
+        mutedGrey: "#7A7A7A",   // alias for existing naming style
       },
       fontFamily: {
         display: ["Playfair Display", "serif"],

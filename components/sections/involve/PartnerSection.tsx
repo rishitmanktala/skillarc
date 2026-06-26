@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Send, ShieldAlert, Landmark, Sparkles } from "lucide-react";
+import { Check, Send } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
 const BENEFITS = [
