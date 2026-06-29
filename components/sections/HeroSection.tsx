@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, BookOpen, Users } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const MotionLink = motion.create(Link);
 
@@ -26,36 +26,76 @@ const SLIDE_DURATION = 5000; // ms per slide
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const prevRef = useRef(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % SLIDES.length);
+      setCurrent((prev) => {
+        prevRef.current = prev;
+        return (prev + 1) % SLIDES.length;
+      });
     }, SLIDE_DURATION);
     return () => clearInterval(timer);
   }, []);
+
+  const handleDotClick = (i: number) => {
+    prevRef.current = current;
+    setCurrent(i);
+  };
 
   return (
     <section className="relative min-h-[calc(100vh-70px)] py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex items-center overflow-hidden">
 
       {/* ── Fullscreen background slideshow ── */}
       <div className="absolute inset-0 -z-10">
+
+        {/*
+          Layer 1 — Previous slide sits underneath at full opacity.
+          This guarantees there is ALWAYS a fully visible image on screen,
+          even at the midpoint of the crossfade transition.
+        */}
+        <div className="absolute inset-0">
+          <Image
+            src={SLIDES[prevRef.current]}
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+            aria-hidden
+          />
+        </div>
+
+        {/*
+          Layer 2 — Current (incoming) slide fades in on top.
+          exit={{ opacity: 1 }} means the outgoing copy never dims —
+          the layer beneath it (Layer 1) is already showing that frame.
+        */}
         <AnimatePresence mode="sync">
           <motion.div
             key={current}
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 1.4, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            <Image
-              src={SLIDES[current]}
-              alt={`SkillARC background ${current + 1}`}
-              fill
-              priority={current === 0}
-              className="object-cover object-center"
-              sizes="100vw"
-            />
+            {/* Ken Burns slow zoom — always something moving on screen */}
+            <motion.div
+              className="absolute inset-0"
+              initial={{ scale: 1.08 }}
+              animate={{ scale: 1.0 }}
+              transition={{ duration: SLIDE_DURATION / 1000 + 1.4, ease: "linear" }}
+            >
+              <Image
+                src={SLIDES[current]}
+                alt={`SkillARC — slide ${current + 1}`}
+                fill
+                priority={current === 0}
+                className="object-cover object-center"
+                sizes="100vw"
+              />
+            </motion.div>
           </motion.div>
         </AnimatePresence>
 
@@ -69,7 +109,7 @@ export default function HeroSection() {
         {SLIDES.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
+            onClick={() => handleDotClick(i)}
             aria-label={`Go to slide ${i + 1}`}
             className={`rounded-full transition-all duration-300 ${
               i === current
