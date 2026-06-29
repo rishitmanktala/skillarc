@@ -81,7 +81,7 @@ export default function ProgramsSection() {
                   </p>
 
                   {/* Link styled button */}
-                  <Link href="/our-work" aria-label={`Learn more about ${program.title}`} className="inline-flex items-center gap-2 font-body text-sm font-semibold text-[#89c5d7] hover:text-[#5faabf] transition-colors mt-auto group/btn select-none">
+                  <Link href="/our-work" aria-label={`Learn more about ${program.title}`} className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary-dark hover:text-primary-dark/70 transition-colors mt-auto group/btn select-none">
                     Explore {program.title}
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>

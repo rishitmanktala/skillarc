@@ -50,6 +50,7 @@ export default function Footer() {
   alt="SkillARC Logo Icon"
   width={36}
   height={36}
+  style={{ width: "auto", height: "auto" }}
   className="object-contain group-hover:scale-105 transition-transform duration-300"
 />
               <span className="font-display font-bold text-xl tracking-tight text-charcoal group-hover:text-primary-dark transition-colors duration-300">

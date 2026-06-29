@@ -78,6 +78,7 @@ export default function InstagramSection() {
                     width={48}
                     height={48}
                     alt="SkillARC Logo"
+                    style={{ width: "auto", height: "auto" }}
                     className="w-12 h-12 rounded-full border border-white bg-white object-contain"
                   />
                 </div>

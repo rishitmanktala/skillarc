@@ -63,8 +63,7 @@ export default function ImpactSection() {
           {IMPACT_STATS.map((stat, index) => (
             <AnimatedSection
               key={stat.label}
-              variant="scale-in"
-              delay={index * 0.08}
+              variant="stagger-item"
               className={`flex flex-col items-center justify-center p-6 md:p-8 bg-white/80 rounded-2xl border border-white/70 border-t-4 ${index % 3 === 0 ? 'border-t-accent' : index % 3 === 1 ? 'border-t-primary' : 'border-t-highlight'} shadow-[0_8px_24px_-12px_rgba(55,108,122,0.28)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_14px_30px_-14px_rgba(158,61,82,0.25)] group ${index === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
             >
               <div className="mb-2">

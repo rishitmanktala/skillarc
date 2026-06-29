@@ -9,22 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#A8D5E2",     // Pastel Blue
-        "primary-dark": "#5E9DB0",
-        accent: "#F2B5C4",      // Pastel Pink
-        "accent-dark": "#C57A8E",
-        background: "#FDF6F0",  // Warm Beige
+        primary: "#A8D5E2",           // Pastel Blue
+        "primary-dark": "#376C7A",    // Matches --primary-dark CSS var
+        accent: "#F2B5C4",            // Pastel Pink
+        "accent-dark": "#9E3D52",     // Matches --accent-dark CSS var
+        background: "#FDF6F0",        // Warm Beige
+        "background-custom": "#FDF6F0", // alias used in hero to-background-custom
         bgBlue: "#E8F4F8",
         bgPink: "#FDE8EE",
         bgYellow: "#FEF6DC",
         bgGreen: "#E8F5EE",
         bgPurple: "#EDE8F5",
         bgCoral: "#FDE8E4",
-        card: "#FFFFFF",        // Soft White
-        highlight: "#E8C97A",   // Gold Accent
-        charcoal: "#2D2D2D",    // Deep Charcoal
-        "muted-grey": "#7A7A7A",
-        mutedGrey: "#7A7A7A",   // alias for existing naming style
+        card: "#FFFFFF",              // Soft White
+        highlight: "#E8C97A",         // Gold Accent
+        "highlight-dark": "#9B7524",  // Matches --highlight-dark CSS var
+        charcoal: "#2D2D2D",          // Deep Charcoal
+        "muted-grey": "#5A5A5A",      // Matches --muted-grey CSS var
+        mutedGrey: "#5A5A5A",         // alias
       },
       fontFamily: {
         display: ["Playfair Display", "serif"],

@@ -20,6 +20,19 @@ const PARTNERS = [
   { name: "Swyam Mental Health & Wellness Clinic", type: "Psychological Support" },
 ];
 
+const getCategoryStyles = (type: string) => {
+  if (type.includes("Education") || type.includes("Literacy") || type.includes("Schooling") || type.includes("Mentorship")) {
+    return "bg-gradient-to-br from-primary/10 to-bgBlue hover:border-primary/40";
+  }
+  if (type.includes("Mental") || type.includes("Psychological") || type.includes("Family")) {
+    return "bg-gradient-to-br from-accent/10 to-bgPink hover:border-accent/40";
+  }
+  if (type.includes("Environment") || type.includes("Sustainability") || type.includes("STEM")) {
+    return "bg-gradient-to-br from-primary/20 to-bgGreen hover:border-primary/40";
+  }
+  return "bg-gradient-to-br from-highlight/10 to-bgYellow hover:border-highlight/40";
+};
+
 export default function CollaborationsSection() {
   return (
     <section id="collaborations" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgCoral border-t border-primary/10 scroll-mt-20">
@@ -32,7 +45,7 @@ export default function CollaborationsSection() {
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight leading-tight">
             Our Partners in Growth
           </h2>
-          <p className="font-body text-sm text-muted-grey mt-4">
+          <p className="font-body text-sm md:text-base text-muted-grey mt-4 leading-relaxed">
             We collaborate with grassroots foundations, academic institutions, and wellness experts to scale our life skills curriculum across diverse communities.
           </p>
         </div>
@@ -40,35 +53,40 @@ export default function CollaborationsSection() {
         {/* Partners Grid */}
         <AnimatedSection
           variant="stagger-container"
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
-          {PARTNERS.map((partner) => (
-            <AnimatedSection
-              key={partner.name}
-              variant="stagger-item"
-              className="w-full"
-            >
-              <motion.div
-                whileHover={{ scale: 1.04, y: -4, borderColor: "#F2B5C4" }}
-                transition={{ type: "spring", stiffness: 350, damping: 15 }}
-                className="card-tile flex flex-col justify-between h-32 p-5 group cursor-pointer"
+          {PARTNERS.map((partner) => {
+            const styles = getCategoryStyles(partner.type);
+            return (
+              <AnimatedSection
+                key={partner.name}
+                variant="stagger-item"
+                className="w-full h-full"
               >
-                <div className="flex justify-between items-start">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary-dark group-hover:bg-accent/10 group-hover:text-accent-dark transition-colors duration-300">
-                    <Handshake className="w-5 h-5 shrink-0" />
+                <motion.div
+                  whileHover={{ scale: 1.03, y: -4 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 15 }}
+                  className={`card-surface flex flex-col justify-between h-full min-h-[160px] p-6 group cursor-pointer relative overflow-hidden border border-charcoal/5 ${styles}`}
+                >
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="p-3 bg-white/60 backdrop-blur-sm rounded-xl text-charcoal shadow-sm group-hover:scale-110 transition-transform duration-300">
+                      <Handshake className="w-6 h-6 shrink-0" />
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-base text-charcoal leading-tight group-hover:text-charcoal transition-colors">
-                    {partner.name}
-                  </h3>
-                  <span className="font-body text-[10px] font-bold text-muted-grey tracking-wider uppercase mt-1 block">
-                    {partner.type}
-                  </span>
-                </div>
-              </motion.div>
-            </AnimatedSection>
-          ))}
+                  <div className="relative z-10">
+                    <h3 className="font-display font-bold text-lg text-charcoal leading-tight mb-2">
+                      {partner.name}
+                    </h3>
+                    <span className="font-body text-xs font-bold text-muted-grey tracking-wider uppercase block">
+                      {partner.type}
+                    </span>
+                  </div>
+                  {/* Subtle hover flare */}
+                  <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-white/40 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </motion.div>
+              </AnimatedSection>
+            );
+          })}
         </AnimatedSection>
 
         {/* Partners Marquee Strip */}
@@ -79,6 +97,7 @@ export default function CollaborationsSection() {
           <Marquee
             items={PARTNERS.map((p) => p.name)}
             speed={25}
+            fadeColor="from-bgCoral"
           />
         </div>
       </div>

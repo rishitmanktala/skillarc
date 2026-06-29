@@ -6,17 +6,18 @@ import React from "react";
 interface MarqueeProps {
   items: string[];
   speed?: number;
+  fadeColor?: string;
 }
 
-export default function Marquee({ items, speed = 30 }: MarqueeProps) {
+export default function Marquee({ items, speed = 30, fadeColor = "from-background-custom" }: MarqueeProps) {
   // Triple the items array to guarantee it spans wider than any viewport and loops seamlessly
   const loopedItems = [...items, ...items, ...items];
 
   return (
     <div className="w-full overflow-hidden whitespace-nowrap relative py-4 select-none">
       {/* Faded edge gradients for premium visual style */}
-      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background-custom to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background-custom to-transparent z-10 pointer-events-none" />
+      <div className={`absolute inset-y-0 left-0 w-20 bg-gradient-to-r ${fadeColor} to-transparent z-10 pointer-events-none`} />
+      <div className={`absolute inset-y-0 right-0 w-20 bg-gradient-to-l ${fadeColor} to-transparent z-10 pointer-events-none`} />
 
       <motion.div
         className="inline-flex gap-6 items-center"

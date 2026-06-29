@@ -39,7 +39,7 @@ export default function InvolveHero() {
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal tracking-tight leading-[1.15] max-w-3xl mb-8">
             Be the Change. Join{" "}
             <span className="relative inline-block whitespace-nowrap">
-              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-dark via-[#89c5d7] to-accent-dark">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-dark via-primary to-accent-dark">
                 SkillARC.
               </span>
               <motion.svg
