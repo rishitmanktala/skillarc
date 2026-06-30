@@ -147,14 +147,7 @@ export default function Footer() {
                   Partner as an Institution
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/get-involved#donate"
-                  className="font-body text-sm text-muted-grey hover:text-accent-dark hover:pl-1 transition-all duration-300"
-                >
-                  Support & Donate
-                </Link>
-              </li>
+
             </ul>
           </AnimatedSection>
 

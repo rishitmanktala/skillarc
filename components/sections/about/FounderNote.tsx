@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import Image from "next/image";
 
 export default function FounderNote() {
   const containerVariants = {
@@ -36,14 +37,22 @@ export default function FounderNote() {
           
           {/* Left Column: Founder Profile Card */}
           <div className="lg:col-span-4 flex flex-col items-center text-center">
-            {/* Avatar Circle Placeholder with custom gradient */}
+            {/* Avatar Circle with Founder's Image */}
             <motion.div
               whileHover={{ rotate: 8, scale: 1.03 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="relative w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-primary via-accent to-highlight shadow-md mb-6 cursor-pointer"
+              className="relative w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-primary via-accent to-highlight shadow-md mb-6 overflow-hidden cursor-pointer"
             >
-              <div className="w-full h-full rounded-full bg-white flex items-center justify-center text-charcoal/70 font-display text-lg font-bold select-none">
-                SG
+              <div className="w-full h-full rounded-full overflow-hidden bg-white relative">
+                <Image
+                  src="/images/team/member1.png"
+                  alt="Shreya Gupta"
+                  fill
+                  sizes="(max-width: 768px) 192px, 224px"
+                  className="object-cover"
+                  style={{ objectPosition: "50% 12%" }}
+                  priority
+                />
               </div>
             </motion.div>
             

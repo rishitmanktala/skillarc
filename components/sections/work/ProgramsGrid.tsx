@@ -18,6 +18,7 @@ const DETAILED_PROGRAMS = [
     ],
     gradient: "from-primary/20 to-accent/20",
     image: "/images/our-work/life-skills-sessions.jpg",
+    imageClass: "object-bottom",
   },
   {
     num: "02",
@@ -32,6 +33,7 @@ const DETAILED_PROGRAMS = [
     ],
     gradient: "from-accent/20 to-highlight/20",
     image: "/images/our-work/leadership-programs.jpg",
+    imageClass: "object-center",
   },
   {
     num: "03",
@@ -46,6 +48,7 @@ const DETAILED_PROGRAMS = [
     ],
     gradient: "from-highlight/20 to-primary/20",
     image: "/images/our-work/youth-development-initiatives.jpg",
+    imageClass: "object-center",
   },
   {
     num: "04",
@@ -60,6 +63,7 @@ const DETAILED_PROGRAMS = [
     ],
     gradient: "from-primary/25 to-accent/25",
     image: "/images/our-work/school-and-community-initiatives.jpg",
+    imageClass: "object-center",
   },
 ];
 
@@ -105,7 +109,7 @@ export default function ProgramsGrid() {
                         fill
                         priority={index === 0}
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover"
+                        className={`object-cover ${program.imageClass || "object-center"}`}
                       />
                     </div>
                   ) : (

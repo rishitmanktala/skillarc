@@ -11,6 +11,7 @@ const INSTAGRAM_POSTS = [
     likes: 124,
     comments: 18,
     alt: "Financial Literacy Workshop",
+    imagePosition: "40% 44%",
   },
   {
     id: "post-2",
@@ -18,6 +19,7 @@ const INSTAGRAM_POSTS = [
     likes: 98,
     comments: 12,
     alt: "STEM Collaboration Event",
+    imagePosition: "59% 52%",
   },
   {
     id: "post-3",
@@ -25,6 +27,7 @@ const INSTAGRAM_POSTS = [
     likes: 142,
     comments: 24,
     alt: "Self Awareness Campaign Circle",
+    imagePosition: "53% 41%",
   },
   {
     id: "post-4",
@@ -32,6 +35,7 @@ const INSTAGRAM_POSTS = [
     likes: 156,
     comments: 31,
     alt: "Interactive Session at Govt College",
+    imagePosition: "72% 46%",
   },
 ];
 
@@ -39,7 +43,7 @@ export default function InstagramSection() {
   const instagramUrl = "https://www.instagram.com/skillarc_?igsh=b2ZodjQ3Ymt3dXoz&utm_source=qr";
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgCoral border-t border-charcoal/5 relative overflow-hidden">
+    <section id="instagram" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-bgCoral border-t border-charcoal/5 relative overflow-hidden">
       {/* Decorative background blur blobs */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 rounded-full bg-accent/5 blur-3xl -z-10" />
       <div className="absolute bottom-0 right-10 w-96 h-96 rounded-full bg-primary/5 blur-3xl -z-10" />
@@ -135,6 +139,7 @@ export default function InstagramSection() {
                     width={400}
                     height={400}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ objectPosition: post.imagePosition || "center" }}
                   />
 
                   {/* Hover Overlay with Likes & Comments */}

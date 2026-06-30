@@ -13,6 +13,7 @@ interface GalleryItem {
   subtitle: string;
   src: string;
   description: string;
+  imagePosition?: string;
 }
 
 const GALLERY_DATA: Record<string, GalleryItem[]> = {
@@ -23,6 +24,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Workshops — April 2026",
       src: "/images/media/workshops/dental-hygiene-61.jpg",
       description: "Adolescent students learning basic oral and dental hygiene rules through interactive diagrams and models.",
+      imagePosition: "51% 63%",
     },
     {
       id: "workshop-2",
@@ -30,6 +32,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Workshops — April 2026",
       src: "/images/media/workshops/dental-hygiene-9.jpg",
       description: "Adolescents actively demonstrating teeth brushing techniques on learning aids during an interactive session.",
+      imagePosition: "42% 83%",
     },
     {
       id: "workshop-3",
@@ -37,6 +40,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Workshops — April 2026",
       src: "/images/media/workshops/dental-hygiene-19.jpg",
       description: "Interactive dental care workshop helping young students overcome fear of dental checkups and build healthy habits.",
+      imagePosition: "45% 81%",
     },
     {
       id: "workshop-4",
@@ -44,6 +48,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Workshops — March 2026",
       src: "/images/media/workshops/financial-literacy-5.jpg",
       description: "Learning the fundamentals of savings, budgeting, and financial planning through gameplay and roleplays.",
+      imagePosition: "40% 44%",
     },
   ],
   Events: [
@@ -53,6 +58,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Events — May 2026",
       src: "/images/media/events/govt-college-4.jpg",
       description: "SkillARC's team conducting a large-group interaction on life choices, career planning, and peer-to-peer respect.",
+      imagePosition: "72% 46%",
     },
     {
       id: "event-2",
@@ -60,6 +66,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Events — May 2026",
       src: "/images/media/events/life-skills-lessons.jpg",
       description: "A major session where students share their personal reflection journals and celebrate small changes together.",
+      imagePosition: "13% 47%",
     },
     {
       id: "event-3",
@@ -67,6 +74,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Events — April 2026",
       src: "/images/media/events/dental-hygiene-5.jpg",
       description: "A community checkup drive organized in collaboration with local medical volunteers.",
+      imagePosition: "52% 76%",
     },
     {
       id: "event-4",
@@ -74,6 +82,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Events — April 2026",
       src: "/images/media/events/dental-hygiene-3.jpg",
       description: "Providing personalized advice and kits to children at a local community center.",
+      imagePosition: "58% 50%",
     },
   ],
   Campaigns: [
@@ -83,6 +92,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Campaigns — June 2026",
       src: "/images/media/campaigns/self-awareness-1.jpg",
       description: "Encouraging teenagers to define their core values and identify strengths, building a strong self-identity.",
+      imagePosition: "53% 41%",
     },
     {
       id: "campaign-2",
@@ -90,6 +100,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Campaigns — May 2026",
       src: "/images/media/campaigns/dental-hygiene-36.jpg",
       description: "Sensitizing local children and parents about preventive health habits and community sanitation.",
+      imagePosition: "9% 75%",
     },
     {
       id: "campaign-3",
@@ -97,6 +108,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Campaigns — May 2026",
       src: "/images/media/campaigns/durtagni-collab-stem-3.jpg",
       description: "A volunteer campaign promoting science education and creative hands-on projects for underrepresented young girls.",
+      imagePosition: "61% 45%",
     },
     {
       id: "campaign-4",
@@ -104,6 +116,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Campaigns — April 2026",
       src: "/images/media/campaigns/seva-19.jpg",
       description: "Empowering college youth to lead community service initiatives and build empathy for civic challenges.",
+      imagePosition: "61% 52%",
     },
   ],
   Volunteers: [
@@ -113,6 +126,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Volunteers — June 2026",
       src: "/images/media/volunteers/durtagni-collab-stem-76.jpg",
       description: "Volunteers mentoring students during a hands-on physics and engineering experimental workshop.",
+      imagePosition: "59% 52%",
     },
     {
       id: "volunteer-2",
@@ -120,6 +134,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Volunteers — June 2026",
       src: "/images/media/volunteers/gentleman-in-making-session-1-101.jpg",
       description: "Mentors facilitating sessions for young boys on gender equality, emotional expression, and character building.",
+      imagePosition: "47% 32%",
     },
     {
       id: "volunteer-3",
@@ -127,6 +142,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Volunteers — May 2026",
       src: "/images/media/volunteers/durtagni-collab-stem-72.jpg",
       description: "Mentoring children as they build simple circuits and robotic modules, sparking curiosities.",
+      imagePosition: "61% 58%",
     },
     {
       id: "volunteer-4",
@@ -134,6 +150,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Volunteers — May 2026",
       src: "/images/media/volunteers/mentorship-workshop-4.jpg",
       description: "Building strong bonds between volunteers and teenagers, sharing guidance on navigation of modern life hurdles.",
+      imagePosition: "47% 57%",
     },
   ],
   Community: [
@@ -143,6 +160,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Community — June 2026",
       src: "/images/media/community/dental-hygiene-61.jpg",
       description: "Local families participating in a health sensitization meeting conducted in the local community hall.",
+      imagePosition: "51% 63%",
     },
     {
       id: "community-2",
@@ -150,6 +168,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Community — June 2026",
       src: "/images/media/community/life-skills-lessons.jpg",
       description: "Outdoor peer circle discussing local issues, collective action steps, and daily reflection practices.",
+      imagePosition: "45% 43%",
     },
     {
       id: "community-3",
@@ -157,6 +176,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Community — May 2026",
       src: "/images/media/community/self-awareness-1.jpg",
       description: "Facilitators involving community elders and youth in dialogues regarding positive self-concept.",
+      imagePosition: "53% 41%",
     },
     {
       id: "community-4",
@@ -164,6 +184,7 @@ const GALLERY_DATA: Record<string, GalleryItem[]> = {
       subtitle: "Community — May 2026",
       src: "/images/media/community/dental-hygiene-3.jpg",
       description: "Distributing wellness guides and hygiene kits to families, promoting preventative health practices.",
+      imagePosition: "58% 50%",
     },
   ],
 };
@@ -272,6 +293,7 @@ export default function GallerySection() {
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-75"
+                  style={{ objectPosition: item.imagePosition || "center" }}
                 />
 
                 {/* Sleek Overlay */}
@@ -334,6 +356,7 @@ export default function GallerySection() {
                 fill
                 sizes="(max-width: 768px) 100vw, 672px"
                 className="object-cover"
+                style={{ objectPosition: items[lightboxIndex].imagePosition || "center" }}
               />
                 
                 {/* Text overlay at bottom of lightbox */}

@@ -2,7 +2,6 @@ import InvolveHero from "@/components/sections/involve/InvolveHero";
 import VolunteerSection from "@/components/sections/involve/VolunteerSection";
 import InternshipSection from "@/components/sections/involve/InternshipSection";
 import PartnerSection from "@/components/sections/involve/PartnerSection";
-import DonateSection from "@/components/sections/involve/DonateSection";
 
 import type { Metadata } from "next";
 
@@ -42,9 +41,6 @@ export default function GetInvolvedPage() {
 
       {/* 4. Institutional Partnerships & Inquiry */}
       <PartnerSection />
-
-      {/* 5. Support Tiers, UPI, & Bank Details */}
-      <DonateSection />
     </>
   );
 }

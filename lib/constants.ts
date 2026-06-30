@@ -60,6 +60,6 @@ export const TEAM_MEMBERS = [
     name: "Shreya Gupta",
     role: "Founder",
     bio: "Passionate about youth development with a vision to empower underprivileged adolescents through critical life skills and leadership training.",
-    image: "/images/team/member1.jpg",
+    image: "/images/team/member1.png",
   },
 ] as const;

@@ -5,49 +5,48 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, BookOpen, Users } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const MotionLink = motion.create(Link);
 
 const SLIDES = [
-  "/images/hero-slideshow/slide-1.jpg",
-  "/images/hero-slideshow/slide-2.jpg",
-  "/images/hero-slideshow/slide-3.jpg",
-  "/images/hero-slideshow/slide-4.jpg",
-  "/images/hero-slideshow/slide-5.jpg",
-  "/images/hero-slideshow/slide-6.jpg",
-  "/images/hero-slideshow/slide-7.jpg",
-  "/images/hero-slideshow/slide-8.jpg",
-  "/images/hero-slideshow/slide-9.jpg",
-  "/images/hero-slideshow/slide-10.jpg",
+  { src: "/images/hero-slideshow/slide-1.jpg", pos: "61% 52%" },
+  { src: "/images/hero-slideshow/slide-2.jpg", pos: "46% 51%" },
+  { src: "/images/hero-slideshow/slide-3.jpg", pos: "9% 59%" },
+  { src: "/images/hero-slideshow/slide-4.jpg", pos: "58% 50%" },
+  { src: "/images/hero-slideshow/slide-5.jpg", pos: "61% 57%" },
+  { src: "/images/hero-slideshow/slide-8.jpg", pos: "60% 48%" },
+  { src: "/images/hero-slideshow/slide-9.jpg", pos: "46% 45%" },
+  { src: "/images/hero-slideshow/slide-10.jpg", pos: "40% 44%" },
 ];
 
 const SLIDE_DURATION = 5000; // ms per slide
 
 export default function HeroSection() {
-  const [current, setCurrent] = useState(0);
-  const prevRef = useRef(0);
+  const [slides, setSlides] = useState({ current: 0, prev: 0 });
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => {
-        prevRef.current = prev;
-        return (prev + 1) % SLIDES.length;
-      });
+      setSlides((prev) => ({
+        prev: prev.current,
+        current: (prev.current + 1) % SLIDES.length,
+      }));
     }, SLIDE_DURATION);
     return () => clearInterval(timer);
   }, []);
 
   const handleDotClick = (i: number) => {
-    prevRef.current = current;
-    setCurrent(i);
+    setSlides((prev) => ({
+      prev: prev.current,
+      current: i,
+    }));
   };
 
   return (
     <section className="relative min-h-[calc(100vh-70px)] py-16 md:py-24 px-4 sm:px-6 lg:px-8 flex items-center overflow-hidden">
 
       {/* ── Fullscreen background slideshow ── */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 bg-charcoal">
 
         {/*
           Layer 1 — Previous slide sits underneath at full opacity.
@@ -56,11 +55,12 @@ export default function HeroSection() {
         */}
         <div className="absolute inset-0">
           <Image
-            src={SLIDES[prevRef.current]}
+            src={SLIDES[slides.prev].src}
             alt=""
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover"
+            style={{ objectPosition: SLIDES[slides.prev].pos }}
             sizes="100vw"
             aria-hidden
           />
@@ -73,7 +73,7 @@ export default function HeroSection() {
         */}
         <AnimatePresence mode="sync">
           <motion.div
-            key={current}
+            key={slides.current}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 1 }}
@@ -88,11 +88,12 @@ export default function HeroSection() {
               transition={{ duration: SLIDE_DURATION / 1000 + 1.4, ease: "linear" }}
             >
               <Image
-                src={SLIDES[current]}
-                alt={`SkillARC — slide ${current + 1}`}
+                src={SLIDES[slides.current].src}
+                alt={`SkillARC — slide ${slides.current + 1}`}
                 fill
-                priority={current === 0}
-                className="object-cover object-center"
+                priority={slides.current === 0}
+                className="object-cover"
+                style={{ objectPosition: SLIDES[slides.current].pos }}
                 sizes="100vw"
               />
             </motion.div>
@@ -112,7 +113,7 @@ export default function HeroSection() {
             onClick={() => handleDotClick(i)}
             aria-label={`Go to slide ${i + 1}`}
             className={`rounded-full transition-all duration-300 ${
-              i === current
+              i === slides.current
                 ? "w-6 h-2.5 bg-white"
                 : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
             }`}

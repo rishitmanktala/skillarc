@@ -25,10 +25,7 @@ const FAQS = [
     question: "Are internships paid?",
     answer: "Yes! All our internships—including content creation, research, operations, and social media coordination—are paid positions with clear learning targets and industry mentorship. They generally span 2-3 months with flexible remote or hybrid work setups.",
   },
-  {
-    question: "How can I donate to SkillARC?",
-    answer: "Your support directly funds learning toolkits, session curriculums, and local youth-led campaigns. You can donate instantly via UPI transfer to SkillARC@upi or execute a bank wire transfer. Check bank account details on the Donate section of our Get Involved page.",
-  },
+
   {
     question: "How can my Youth Foundation collaborate?",
     answer: "We collaborate with local and national Youth Foundations to deploy digital literacy modules or extend mental well-being circles to underserved communities. If you run a community center or adolescent shelter, please send a partnership inquiry so we can align programs.",

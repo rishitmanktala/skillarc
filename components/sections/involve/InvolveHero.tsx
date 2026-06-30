@@ -7,7 +7,6 @@ export default function InvolveHero() {
     { id: "volunteer", label: "Volunteer" },
     { id: "intern", label: "Intern" },
     { id: "partner", label: "Partner" },
-    { id: "donate", label: "Donate" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -37,10 +36,10 @@ export default function InvolveHero() {
 
           {/* Headline */}
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal tracking-tight leading-[1.15] max-w-3xl mb-8">
-            Be the Change. Join{" "}
+            Be the Change.{" "}
             <span className="relative inline-block whitespace-nowrap">
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-dark via-primary to-accent-dark">
-                SkillARC.
+                Join SkillARC.
               </span>
               <motion.svg
                 className="absolute left-0 -bottom-1 w-full h-[10px] -z-0"

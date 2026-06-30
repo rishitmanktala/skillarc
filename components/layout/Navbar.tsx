@@ -106,7 +106,7 @@ export default function Navbar() {
           {/* Desktop CTA Button */}
           <div className="hidden lg:block">
             <Link
-              href="/get-involved#donate"
+              href="/media#instagram"
               className={cn(
                 "font-body font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-200 hover:scale-[1.02] shadow-sm hover:shadow-md active:scale-95",
                 !isTransparent
@@ -114,7 +114,7 @@ export default function Navbar() {
                   : "bg-white/15 backdrop-blur-sm text-white border border-white/30 hover:bg-white/25"
               )}
             >
-              Donate
+              Instagram
             </Link>
           </div>
 
@@ -177,11 +177,11 @@ export default function Navbar() {
               {/* Mobile CTA at the bottom */}
               <div className="mt-8 border-t border-primary/15 pt-6">
                 <Link
-                  href="/get-involved#donate"
+                  href="/media#instagram"
                   onClick={() => setIsOpen(false)}
                   className="block text-center font-body font-semibold bg-accent text-charcoal py-3 px-6 rounded-full transition-all hover:bg-accent/80 shadow-sm active:scale-95"
                 >
-                  Donate
+                  Instagram
                 </Link>
               </div>
             </motion.div>

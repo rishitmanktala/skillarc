@@ -1,6 +1,5 @@
 import MediaHero from "@/components/sections/media/MediaHero";
 import GallerySection from "@/components/sections/media/GallerySection";
-import VideosSection from "@/components/sections/media/VideosSection";
 import InstagramSection from "@/components/sections/media/InstagramSection";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
@@ -41,10 +40,7 @@ export default function MediaPage() {
         <GallerySection />
       </AnimatedSection>
 
-      {/* 3. Watch the Impact Videos Grid */}
-      <AnimatedSection direction="up">
-        <VideosSection />
-      </AnimatedSection>
+
 
       {/* 4. Instagram Updates Section */}
       <AnimatedSection direction="up">
