@@ -48,55 +48,24 @@ export default function HeroSection() {
       {/* ── Fullscreen background slideshow ── */}
       <div className="absolute inset-0 -z-10 bg-charcoal">
 
-        {/*
-          Layer 1 — Previous slide sits underneath at full opacity.
-          This guarantees there is ALWAYS a fully visible image on screen,
-          even at the midpoint of the crossfade transition.
-        */}
-        <div className="absolute inset-0">
-          <Image
-            src={SLIDES[slides.prev].src}
-            alt=""
-            fill
-            priority
-            className="object-cover"
-            style={{ objectPosition: SLIDES[slides.prev].pos }}
-            sizes="100vw"
-            aria-hidden
-          />
-        </div>
-
-        {/*
-          Layer 2 — Current (incoming) slide fades in on top.
-          exit={{ opacity: 1 }} means the outgoing copy never dims —
-          the layer beneath it (Layer 1) is already showing that frame.
-        */}
-        <AnimatePresence mode="sync">
+        <AnimatePresence initial={false}>
           <motion.div
             key={slides.current}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 1 }}
-            transition={{ duration: 1.4, ease: "easeInOut" }}
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            {/* Ken Burns slow zoom — always something moving on screen */}
-            <motion.div
-              className="absolute inset-0"
-              initial={{ scale: 1.08 }}
-              animate={{ scale: 1.0 }}
-              transition={{ duration: SLIDE_DURATION / 1000 + 1.4, ease: "linear" }}
-            >
-              <Image
-                src={SLIDES[slides.current].src}
-                alt={`SkillARC — slide ${slides.current + 1}`}
-                fill
-                priority={slides.current === 0}
-                className="object-cover"
-                style={{ objectPosition: SLIDES[slides.current].pos }}
-                sizes="100vw"
-              />
-            </motion.div>
+            <Image
+              src={SLIDES[slides.current].src}
+              alt={`SkillARC — slide ${slides.current + 1}`}
+              fill
+              priority={slides.current === 0}
+              className="object-cover"
+              style={{ objectPosition: SLIDES[slides.current].pos }}
+              sizes="100vw"
+            />
           </motion.div>
         </AnimatePresence>
 
@@ -130,7 +99,7 @@ export default function HeroSection() {
           {/* Eyebrow Label */}
           <AnimatedSection variant="stagger-item" className="mb-6">
             <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white font-body text-xs md:text-sm font-semibold tracking-wider uppercase border border-white/25">
-              Empowering Youth Across India 🇮🇳
+              Underprivileged Youth Across India
             </span>
           </AnimatedSection>
 

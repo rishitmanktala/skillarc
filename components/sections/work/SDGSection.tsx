@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SDG_GOALS } from "@/lib/constants";
+import Image from "next/image";
 
 // Map UN SDG goal names to their official color schemes
 const getSDGColor = (goal: string) => {
@@ -81,11 +82,22 @@ export default function SDGSection() {
                 {/* Official SDG Color Strip */}
                 <div className={`h-[8px] w-full ${colors.strip}`} />
                 
-                <div className="p-6 md:p-8 flex-grow flex flex-col items-start">
-                  {/* Huge bold pastel blue target badge */}
-                  <span className="font-display font-black text-5xl md:text-6xl text-primary-dark/70 mb-4 select-none">
-                    {goal.goal.split(" ")[1]}
-                  </span>
+                <div className="p-6 md:p-8 flex-grow flex flex-col items-start w-full">
+                  <div className="flex justify-between items-start w-full mb-4">
+                    {/* Huge bold target badge */}
+                    <span className="font-display font-black text-5xl md:text-6xl text-primary-dark/70 select-none">
+                      {goal.goal.split(" ")[1]}
+                    </span>
+                    {/* SDG Official Logo Image */}
+                    <div className="relative w-20 h-20 shrink-0">
+                      <Image
+                        src={`/images/our-work/sdg-${goal.goal.split(" ")[1]}.png`}
+                        alt={goal.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
 
                   {/* Goal Name / Title */}
                   <h3 className="font-display font-bold text-lg md:text-xl text-charcoal mb-4 flex items-center gap-2">

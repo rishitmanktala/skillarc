@@ -4,19 +4,20 @@ import { motion } from "framer-motion";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { Handshake } from "lucide-react";
 import Marquee from "@/components/ui/Marquee";
+import Image from "next/image";
 
 const PARTNERS = [
-  { name: "Yatan Youth Foundation", type: "Key Collaborator" },
-  { name: "Drutagni", type: "STEM & Sustainability" },
-  { name: "Literacy India", type: "Education & Literacy" },
-  { name: "Elysium Empressa", type: "Youth Action" },
-  { name: "Mitti ki Vardaan", type: "Sustainability & Environment" },
-  { name: "Sarbojanin Milan Utsav", type: "Community Engagement" },
-  { name: "Mera Parivar", type: "Family & Life Skills" },
-  { name: "Mission Sarbat Da Bhala", type: "Mentorship & Education" },
-  { name: "The Yap Company", type: "Media & Podcast" },
+  { name: "Yatan Youth Foundation", type: "Key Collaborator", logo: "/images/partners/yatan.png" },
+  { name: "Drutagni", type: "STEM & Sustainability", logo: "/images/partners/drutagni.png" },
+  { name: "Literacy India", type: "Education & Literacy", logo: "/images/partners/literacy-india.png" },
+  { name: "Elysium Empressa", type: "Youth Action", logo: "/images/partners/elysium-empressa.png" },
+  { name: "Mitti ki Vardaan", type: "Sustainability & Environment", logo: "/images/partners/mitti-ki-vardaan.png" },
+  { name: "Sarbojanin Milan Utsav", type: "Community Engagement", logo: "/images/partners/sarbojanin-milan-utsav.png" },
+  { name: "Mera Parivar", type: "Family & Life Skills", logo: "/images/partners/mera-parivar.png" },
+  { name: "Mission Sarbat Da Bhala", type: "Mentorship & Education", logo: "/images/partners/mission-sarbat-da-bhala.png" },
+  { name: "The Yap Company", type: "Media & Podcast", logo: "/images/partners/the-yap-company.png" },
   { name: "Micro School Ghosala", type: "Alternative Schooling" },
-  { name: "Tere Hamsafar", type: "Mental Well-being" },
+  { name: "Tere Hamsafar", type: "Mental Well-being", logo: "/images/partners/tere-hamsafar.png" },
   { name: "Swyam Mental Health & Wellness Clinic", type: "Psychological Support" },
 ];
 
@@ -68,10 +69,21 @@ export default function CollaborationsSection() {
                   transition={{ type: "spring", stiffness: 350, damping: 15 }}
                   className={`card-surface flex flex-col justify-between h-full min-h-[160px] p-6 group cursor-pointer relative overflow-hidden border border-charcoal/5 ${styles}`}
                 >
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="p-3 bg-white/60 backdrop-blur-sm rounded-xl text-charcoal shadow-sm group-hover:scale-110 transition-transform duration-300">
-                      <Handshake className="w-6 h-6 shrink-0" />
-                    </div>
+                  <div className="w-full h-16 flex items-center justify-start mb-4">
+                    {partner.logo ? (
+                      <div className="relative w-32 h-14 shrink-0">
+                        <Image
+                          src={partner.logo}
+                          alt={`${partner.name} logo`}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
+                    ) : (
+                      <div className="p-2.5 bg-white/40 backdrop-blur-sm rounded-xl text-charcoal shadow-sm group-hover:scale-110 transition-transform duration-300 flex items-center justify-center w-11 h-11">
+                        <Handshake className="w-5 h-5 shrink-0" />
+                      </div>
+                    )}
                   </div>
                   <div className="relative z-10">
                     <h3 className="font-display font-bold text-lg text-charcoal leading-tight mb-2">

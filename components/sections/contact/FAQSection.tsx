@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 const FAQS = [
   {
     question: "What is SkillARC?",
-    answer: "SkillARC is a youth-led nonprofit organization based in Gurugram, India. We are dedicated to empowering adolescents and youth through critical life skills, digital literacy, and leadership training to bridge the gap between academic schooling and real-world capabilities.",
+    answer: "SkillARC is a youth-led nonprofit organization based in Gurugram, India. We are dedicated to empowering underprivileged adolescents and youth through critical life skills, digital literacy, and leadership training to bridge the gap between academic schooling and real-world capabilities.",
   },
   {
     question: "How can I volunteer with SkillARC?",
@@ -23,7 +23,7 @@ const FAQS = [
   },
   {
     question: "Are internships paid?",
-    answer: "Yes! All our internships—including content creation, research, operations, and social media coordination—are paid positions with clear learning targets and industry mentorship. They generally span 2-3 months with flexible remote or hybrid work setups.",
+    answer: "No, only certificates and LORs will be provided.",
   },
 
   {
@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     question: "Where does SkillARC operate?",
-    answer: "Our administrative office is located in Gurugram, India, where we run physical school workshops and local community campaigns. Additionally, our digital curriculum guides, learning resources, and virtual mentorship programs support youth across 18 states.",
+    answer: "Our administrative office is located in Gurugram, India, where we run physical school workshops and local community campaigns. We operate exclusively in Gurugram.",
   },
 ];
 

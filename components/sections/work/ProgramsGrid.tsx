@@ -62,7 +62,7 @@ const DETAILED_PROGRAMS = [
       "Parent-educator engagement and support circles",
     ],
     gradient: "from-primary/25 to-accent/25",
-    image: "/images/our-work/schoolandcommunity-initiatives.png",
+    image: "/images/our-work/school-and-community-initiatives.webp",
     imageClass: "object-top",
   },
 ];
